@@ -12,6 +12,7 @@
     activeCategory: "all",
     query: "",
     sort: "controversy",
+    lastFocused: null,
   };
 
   var el = {
@@ -51,6 +52,15 @@
     return (state.catMap[id] && state.catMap[id].label) || id;
   }
 
+  function truncate(s, n) {
+    s = String(s || "");
+    return s.length > n ? s.slice(0, n - 1).replace(/\s+\S*$/, "") + "…" : s;
+  }
+
+  function plural(n, word) {
+    return n + " " + word + (n === 1 ? "" : "s");
+  }
+
   /* ---------- data load ---------- */
   function load() {
     fetch(DATA_URL)
@@ -76,7 +86,7 @@
     el.disclaimer.textContent = data.meta.disclaimer;
     el.footerMeta.textContent =
       data.meta.title + " · v" + data.meta.version + " · updated " + data.meta.lastUpdated +
-      " · " + state.topics.length + " topics";
+      " · " + plural(state.topics.length, "topic");
 
     buildCategoryChips();
     bindEvents();
@@ -92,7 +102,8 @@
         var style = active ? ' style="background:' + c.color + '"' : "";
         return (
           '<button class="chip' + (active ? " active" : "") +
-          '" data-cat="' + esc(c.id) + '"' + style + ">" + esc(c.label) + "</button>"
+          '" data-cat="' + esc(c.id) + '"' + style +
+          ' aria-pressed="' + active + '">' + esc(c.label) + "</button>"
         );
       })
       .join("");
@@ -123,25 +134,43 @@
     return list;
   }
 
+  function hasActiveFilters() {
+    return state.activeCategory !== "all" || state.query.trim() !== "";
+  }
+
   /* ---------- render ---------- */
   function render() {
     var list = filtered();
-    el.empty.hidden = list.length !== 0;
-    el.resultCount.textContent =
-      list.length + (list.length === 1 ? " topic" : " topics") +
-      (state.activeCategory === "all" ? "" : " in " + catLabel(state.activeCategory)) +
-      (state.query ? ' matching "' + state.query + '"' : "");
+    var none = list.length === 0;
 
     el.grid.innerHTML = list.map(cardHTML).join("");
+    el.empty.hidden = !none;
+    if (none) {
+      el.empty.innerHTML =
+        "No topics match your filters." +
+        (hasActiveFilters() ? ' <button type="button" class="link-btn" id="reset-filters">Reset filters</button>' : "");
+      var rb = document.getElementById("reset-filters");
+      if (rb) rb.addEventListener("click", resetFilters);
+    }
+
+    el.resultCount.textContent =
+      plural(list.length, "topic") +
+      (state.activeCategory === "all" ? "" : " in " + catLabel(state.activeCategory)) +
+      (state.query.trim() ? ' matching "' + state.query.trim() + '"' : "");
+
     Array.prototype.forEach.call(el.grid.querySelectorAll(".card"), function (c) {
-      c.addEventListener("click", function () { openTopic(c.getAttribute("data-id")); });
+      c.addEventListener("click", function () { openTopic(c.getAttribute("data-id"), c); });
     });
   }
 
   function cardHTML(t) {
     var pct = Math.round((t.controversyScore / 10) * 100);
+    var nSrc = (t.sources || []).length;
+    var nViews = (t.competingNarratives || []).length;
     return (
-      '<article class="card' + (t.featured ? " featured" : "") + '" data-id="' + esc(t.id) + '" tabindex="0">' +
+      '<article class="card' + (t.featured ? " featured" : "") +
+        '" data-id="' + esc(t.id) + '" tabindex="0" role="button" aria-label="' +
+        esc(t.title) + '">' +
         (t.featured ? '<span class="featured-badge">★ Priority topic</span>' : "") +
         '<div class="card-top">' +
           '<span class="card-cat" style="background:' + catColor(t.category) + '">' +
@@ -150,6 +179,10 @@
         "</div>" +
         "<h3>" + esc(t.title) + "</h3>" +
         '<p class="card-summary">' + esc(truncate(t.summary, 160)) + "</p>" +
+        '<div class="card-tags">' +
+          "<span>🔗 " + plural(nSrc, "source") + "</span>" +
+          "<span>⚖ " + plural(nViews, "viewpoint") + "</span>" +
+        "</div>" +
         '<div class="meter">' +
           '<span class="meter-label">Controversy</span>' +
           '<span class="meter-bar"><span class="meter-fill" style="width:' + pct + '%"></span></span>' +
@@ -159,19 +192,16 @@
     );
   }
 
-  function truncate(s, n) {
-    s = String(s || "");
-    return s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s;
-  }
-
   /* ---------- modal ---------- */
-  function openTopic(id) {
+  function openTopic(id, trigger) {
     var t = state.topics.find(function (x) { return x.id === id; });
     if (!t) return;
 
+    state.lastFocused = trigger || document.activeElement;
+
     var html =
       (t.featured ? '<span class="featured-badge modal-badge">★ Priority topic</span>' : "") +
-      "<h2>" + esc(t.title) + "</h2>" +
+      '<h2 id="modal-title">' + esc(t.title) + "</h2>" +
       '<div class="modal-meta">' +
         '<span class="card-cat" style="background:' + catColor(t.category) + '">' + esc(catLabel(t.category)) + "</span>" +
         "<span>" + esc(t.era) + "</span>" +
@@ -187,7 +217,9 @@
     el.modalContent.innerHTML = html;
     el.backdrop.hidden = false;
     document.body.style.overflow = "hidden";
-    el.modal.focus();
+    el.modal.scrollTop = 0;
+    el.backdrop.scrollTop = 0;
+    el.modalClose.focus();
     if (history.replaceState) history.replaceState(null, "", "#" + t.id);
   }
 
@@ -213,14 +245,46 @@
   }
 
   function closeModal() {
+    if (el.backdrop.hidden) return;
     el.backdrop.hidden = true;
     document.body.style.overflow = "";
     if (history.replaceState) history.replaceState(null, "", location.pathname + location.search);
+    if (state.lastFocused && typeof state.lastFocused.focus === "function") {
+      state.lastFocused.focus();
+    }
+    state.lastFocused = null;
+  }
+
+  // Keep Tab focus inside the open modal.
+  function trapFocus(e) {
+    if (e.key !== "Tab" || el.backdrop.hidden) return;
+    var focusable = el.modal.querySelectorAll(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    );
+    if (!focusable.length) return;
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   }
 
   function maybeOpenFromHash() {
     var id = (location.hash || "").replace(/^#/, "");
     if (id) openTopic(id);
+  }
+
+  function resetFilters() {
+    state.query = "";
+    state.activeCategory = "all";
+    el.search.value = "";
+    buildCategoryChips();
+    render();
+    el.search.focus();
   }
 
   /* ---------- events ---------- */
@@ -245,14 +309,24 @@
       if (e.target === el.backdrop) closeModal();
     });
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && !el.backdrop.hidden) closeModal();
+      if (el.backdrop.hidden) return;
+      if (e.key === "Escape") closeModal();
+      else trapFocus(e);
     });
-    // keyboard open on cards
+    // Open a card with Enter or Space (it is role="button").
     el.grid.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") {
-        var card = e.target.closest(".card");
-        if (card) openTopic(card.getAttribute("data-id"));
+      if (e.key !== "Enter" && e.key !== " " && e.key !== "Spacebar") return;
+      var card = e.target.closest(".card");
+      if (card) {
+        e.preventDefault();
+        openTopic(card.getAttribute("data-id"), card);
       }
+    });
+    // Support manual hash navigation (e.g. shared deep links pasted into the bar).
+    window.addEventListener("hashchange", function () {
+      var id = (location.hash || "").replace(/^#/, "");
+      if (!id) closeModal();
+      else if (state.topics.some(function (t) { return t.id === id; })) openTopic(id);
     });
   }
 

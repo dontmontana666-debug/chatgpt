@@ -4,7 +4,7 @@
     "description": "A curated, source-linked archive of the most contested episodes in modern Sri Lankan politics. Each entry presents the mainstream account, the competing narratives, the documented facts, and what remains unresolved or under-reported.",
     "disclaimer": "This archive is an educational research aid. 'Hidden truth' here means the contested, disputed, or under-reported dimensions of each episode — not conspiracy. Entries deliberately present multiple viewpoints. Sources are starting points for your own verification; always read them critically and consult primary documents where possible.",
     "lastUpdated": "2026-06-26",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "categories": [
     { "id": "war", "label": "Civil War & Accountability", "color": "#c0392b" },

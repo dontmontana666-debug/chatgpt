@@ -76,10 +76,13 @@ def find_topic(data, key):
     if len(matches) == 1:
         return matches[0]
     if len(matches) > 1:
-        print(yellow(f"Ambiguous — {len(matches)} matches:"))
+        print(yellow(f"Ambiguous — {len(matches)} topics match '{key}':"))
         for t in matches:
             print(f"  {cyan(t['id'])}  {t['title']}")
+        print(dim("Re-run `show` with one of the ids above."))
         return None
+    print(red(f"No topic found for '{key}'."))
+    print(dim("Try `python3 cli.py list` to see available ids."))
     return None
 
 
@@ -119,6 +122,11 @@ def _print_list(data, topics):
 
 
 def cmd_list(data, args):
+    cat = getattr(args, "category", None)
+    if cat and cat not in {c["id"] for c in data["categories"]}:
+        valid = ", ".join(c["id"] for c in data["categories"])
+        print(yellow(f"Unknown category '{cat}'. Valid ids: {valid}"))
+        sys.exit(1)
     topics = _sorted_topics(data, args)
     if args.json:
         print(json.dumps(topics, indent=2, ensure_ascii=False))
@@ -148,8 +156,6 @@ def _wrap_items(label, items, color=cyan, bullet="•"):
 def cmd_show(data, args):
     t = find_topic(data, args.id)
     if not t:
-        if args.id not in [x["id"] for x in data["topics"]]:
-            print(red(f"No topic found for '{args.id}'."))
         sys.exit(1)
     if args.json:
         print(json.dumps(t, indent=2, ensure_ascii=False))
@@ -197,6 +203,8 @@ def cmd_validate(data, _args):
             errors.append(f"{ctx}: unknown category '{t.get('category')}'")
         if not isinstance(t.get("controversyScore"), (int, float)) or not (0 <= t.get("controversyScore", -1) <= 10):
             errors.append(f"{ctx}: controversyScore must be 0–10")
+        if "featured" in t and not isinstance(t["featured"], bool):
+            errors.append(f"{ctx}: 'featured' must be true/false")
         for s in t.get("sources", []):
             if not str(s.get("url", "")).startswith("http"):
                 errors.append(f"{ctx}: source '{s.get('label')}' has no valid URL")
