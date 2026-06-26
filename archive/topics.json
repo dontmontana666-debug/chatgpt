@@ -17,28 +17,36 @@
   "topics": [
     {
       "id": "war-final-phase-2009",
-      "title": "The Final Phase of the Civil War (2009) and Alleged War Crimes",
+      "title": "The Tamil Eelam War and the Final-Phase Atrocity Allegations (Mullivaikkal)",
       "category": "war",
-      "era": "2008–2009",
+      "era": "1983–2009 (final phase 2008–2009)",
       "controversyScore": 10,
-      "summary": "The military defeat of the LTTE in May 2009 ended a 26-year war, but the conduct of the final months — fighting concentrated in 'No Fire Zones' packed with civilians — produced enduring allegations of mass civilian deaths, shelling of hospitals, and summary executions.",
+      "featured": true,
+      "summary": "The 26-year war between the Sri Lankan state and the LTTE — fought to establish a Tamil homeland, 'Tamil Eelam' — ended with the military's victory at Mullivaikkal in May 2009. The conduct of the final months, with fighting concentrated in government-declared 'No Fire Zones' packed with civilians, produced enduring allegations of mass civilian deaths, shelling of hospitals, summary executions, and — in the Tamil account — genocide.",
       "mainstreamAccount": "The government characterised the offensive as a 'humanitarian rescue operation' that liberated civilians held as a human shield by the LTTE, and stated it followed a 'zero civilian casualty' policy.",
       "competingNarratives": [
         "A UN expert panel found credible allegations that tens of thousands of civilians died, many from government shelling of areas it had itself declared safe.",
-        "The LTTE is credibly accused of using civilians as human shields and shooting those who tried to flee.",
+        "Tamil political bodies and the diaspora describe the final phase — and the war's pattern as a whole — as genocide, commemorated annually as Mullivaikkal Remembrance Day; the framing is rejected by the Sri Lankan state and contested by some scholars.",
+        "The LTTE is credibly accused of using civilians as human shields and shooting those who tried to flee, and ran its own authoritarian, child-recruiting administration.",
+        "The 'white flag' incident: senior LTTE figures who reportedly tried to surrender are alleged to have been killed after giving themselves up.",
         "Estimates of civilian deaths in the final months range widely — from around 7,000 (early UN field estimates) to 40,000 or more (UN panel) and over 70,000 (some later analyses)."
       ],
       "documentedFacts": [
         "The UN Secretary-General's Panel of Experts (2011) found credible allegations of serious violations by both sides.",
         "The OHCHR Investigation on Sri Lanka (OISL, 2015) documented patterns of unlawful killings, shelling, and disappearances.",
+        "Channel 4's 'Sri Lanka's Killing Fields' (2011) broadcast footage appearing to show summary executions and the bodies of the dead; the government disputed its authenticity, but UN experts assessed key clips as authentic.",
+        "An internal UN review (the Petrie Report, 2012) concluded the UN itself had failed in its responsibilities during the final stages.",
         "Sri Lanka co-sponsored UN Human Rights Council Resolution 30/1 (2015) committing to accountability mechanisms, then withdrew support in 2020."
       ],
-      "stillContested": "The true civilian death toll, the degree of intent behind shelling of No Fire Zones, and whether any credible domestic accountability process will ever occur. Successive governments have rejected international investigation; victims' families continue to demand answers.",
+      "stillContested": "The true civilian death toll, whether the conduct of the war amounts to genocide or war crimes (and whose), the degree of intent behind shelling of No Fire Zones, the fate of those who surrendered, and whether any credible accountability process — domestic or international — will ever occur. Successive governments have rejected international investigation; victims' families continue to demand answers.",
       "sources": [
-        { "label": "Wikipedia: Sri Lankan Civil War – final offensive", "url": "https://en.wikipedia.org/wiki/Sri_Lankan_Civil_War" },
+        { "label": "Wikipedia: Sri Lankan Civil War", "url": "https://en.wikipedia.org/wiki/Sri_Lankan_Civil_War" },
+        { "label": "Wikipedia: Eelam War IV (the final phase)", "url": "https://en.wikipedia.org/wiki/Eelam_War_IV" },
+        { "label": "Wikipedia: Allegations of war crimes (final stages)", "url": "https://en.wikipedia.org/wiki/Allegations_of_war_crimes_during_the_final_stages_of_the_Sri_Lankan_Civil_War" },
+        { "label": "Wikipedia: Tamil genocide / Mullivaikkal commemoration", "url": "https://en.wikipedia.org/wiki/Tamil_genocide" },
         { "label": "UN Report of the Secretary-General's Panel of Experts on Accountability in Sri Lanka (2011)", "url": "https://www.un.org/News/dh/infocus/Sri_Lanka/POE_Report_Full.pdf" },
         { "label": "OHCHR Investigation on Sri Lanka (OISL)", "url": "https://www.ohchr.org/en/hr-bodies/hrc/sri-lanka/oisl" },
-        { "label": "Wikipedia: No Fire Zone (allegations)", "url": "https://en.wikipedia.org/wiki/Allegations_of_war_crimes_during_the_final_stages_of_the_Sri_Lankan_Civil_War" }
+        { "label": "Wikipedia: Sri Lanka's Killing Fields (Channel 4)", "url": "https://en.wikipedia.org/wiki/Sri_Lanka%27s_Killing_Fields" }
       ]
     },
     {
@@ -91,25 +99,29 @@
     },
     {
       "id": "easter-bombings-2019",
-      "title": "The 2019 Easter Sunday Bombings and the 'Conspiracy' Question",
+      "title": "The 2019 Easter Sunday Bombings and the 'Grand Conspiracy' Question",
       "category": "human-rights",
       "era": "April 2019",
-      "controversyScore": 9,
-      "summary": "Coordinated suicide bombings of churches and hotels on Easter Sunday 2019 killed more than 250 people. Beyond the attack itself, the controversy centres on ignored intelligence warnings and persistent allegations that the plot was enabled or exploited for political ends.",
-      "mainstreamAccount": "A local Islamist group inspired by ISIS carried out the attacks; officials cited a breakdown in intelligence-sharing amid a feud at the top of government.",
+      "controversyScore": 10,
+      "featured": true,
+      "summary": "Coordinated suicide bombings of churches and hotels on Easter Sunday 2019 killed more than 250 people. Beyond the attack itself, the controversy centres on ignored, specific advance warnings and persistent allegations — voiced by the Catholic Church and amplified by later investigative journalism — that the plot was enabled, allowed to mature, or exploited for political ends.",
+      "mainstreamAccount": "A local Islamist group (National Thowheeth Jama'ath) inspired by ISIS carried out the attacks; officials cited a breakdown in intelligence-sharing amid a bitter feud between the president and prime minister at the top of government.",
       "competingNarratives": [
-        "Prior, specific foreign intelligence warnings were not acted upon — a failure officials have blamed on each other.",
-        "The Catholic Church, led by the Archbishop of Colombo, has repeatedly alleged a 'grand conspiracy' and demanded to know who benefited politically.",
+        "Prior, specific foreign intelligence warnings (reportedly from Indian agencies) named targets and individuals days in advance but were not acted upon — a failure officials have blamed on one another.",
+        "The Catholic Church, led by Cardinal Malcolm Ranjith, the Archbishop of Colombo, has repeatedly alleged a 'grand conspiracy' and demanded to know who benefited politically, rejecting the official account as incomplete.",
+        "A 2023 Channel 4 documentary aired allegations from a whistle-blower that a senior state intelligence officer had contact with a figure linked to the bombers, implying elements of the security establishment helped engineer instability before an election — claims the government and the named officer denied and which a parliamentary committee disputed.",
         "Critics note the attacks preceded an election in which a hardline security platform proved decisive, fuelling suspicion the threat was allowed to mature."
       ],
       "documentedFacts": [
-        "A Presidential Commission of Inquiry recommended action against former officials, including a former president, for negligence.",
-        "Multiple investigations confirmed advance warnings existed and were not escalated.",
-        "Survivors and the Church continue to reject official findings as incomplete."
+        "A Presidential Commission of Inquiry (2021) found negligence and recommended action against former officials, including former President Maithripala Sirisena.",
+        "In 2023, the Supreme Court found Sirisena and several top security officials liable for failing to prevent the attacks and ordered them to pay compensation to victims.",
+        "Multiple investigations confirmed specific advance warnings existed and were not escalated through the chain of command.",
+        "Survivors and the Church continue to reject official findings as incomplete and demand an independent international inquiry."
       ],
-      "stillContested": "Whether negligence alone explains the failure, who (if anyone) deliberately allowed the plot to proceed, and why full accountability has stalled.",
+      "stillContested": "Whether negligence alone explains the failure, the credibility of the 'grand conspiracy' allegations, who (if anyone) deliberately allowed the plot to proceed, and why full accountability for any masterminds beyond the bombers themselves has stalled.",
       "sources": [
-        { "label": "Wikipedia: 2019 Sri Lanka Easter bombings", "url": "https://en.wikipedia.org/wiki/2019_Sri_Lanka_Easter_bombings" }
+        { "label": "Wikipedia: 2019 Sri Lanka Easter bombings", "url": "https://en.wikipedia.org/wiki/2019_Sri_Lanka_Easter_bombings" },
+        { "label": "Wikipedia: National Thowheeth Jama'ath", "url": "https://en.wikipedia.org/wiki/National_Thowheeth_Jama%27ath" }
       ]
     },
     {

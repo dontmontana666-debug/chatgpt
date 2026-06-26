@@ -115,6 +115,24 @@ html, body {
   transition: transform 0.15s ease, border-color 0.15s ease;
 }
 .card:hover { transform: translateY(-3px); border-color: var(--accent-2); }
+.card.featured {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 8px 24px rgba(245, 197, 24, 0.12);
+  position: relative;
+}
+.featured-badge {
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  background: rgba(245, 197, 24, 0.12);
+  border: 1px solid rgba(245, 197, 24, 0.4);
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+.modal-badge { display: inline-block; margin-bottom: 0.7rem; }
 .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; }
 .card-cat {
   font-size: 0.72rem;
@@ -147,6 +165,8 @@ html, body {
   padding: 2rem 1rem; overflow-y: auto; z-index: 50;
   backdrop-filter: blur(3px);
 }
+/* The [hidden] attribute must beat the display:flex above, or the overlay never hides. */
+.modal-backdrop[hidden] { display: none; }
 .modal {
   background: var(--bg-card);
   border: 1px solid var(--border);

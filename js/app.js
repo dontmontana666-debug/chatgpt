@@ -114,6 +114,8 @@
     });
 
     list.sort(function (a, b) {
+      // Featured (priority) topics are always pinned to the top.
+      if (!!a.featured !== !!b.featured) return a.featured ? -1 : 1;
       if (state.sort === "controversy") return b.controversyScore - a.controversyScore;
       if (state.sort === "chrono") return eraStart(a.era) - eraStart(b.era);
       return a.title.localeCompare(b.title);
@@ -139,7 +141,8 @@
   function cardHTML(t) {
     var pct = Math.round((t.controversyScore / 10) * 100);
     return (
-      '<article class="card" data-id="' + esc(t.id) + '" tabindex="0">' +
+      '<article class="card' + (t.featured ? " featured" : "") + '" data-id="' + esc(t.id) + '" tabindex="0">' +
+        (t.featured ? '<span class="featured-badge">★ Priority topic</span>' : "") +
         '<div class="card-top">' +
           '<span class="card-cat" style="background:' + catColor(t.category) + '">' +
             esc(catLabel(t.category)) + "</span>" +
@@ -167,6 +170,7 @@
     if (!t) return;
 
     var html =
+      (t.featured ? '<span class="featured-badge modal-badge">★ Priority topic</span>' : "") +
       "<h2>" + esc(t.title) + "</h2>" +
       '<div class="modal-meta">' +
         '<span class="card-cat" style="background:' + catColor(t.category) + '">' + esc(catLabel(t.category)) + "</span>" +

@@ -101,7 +101,8 @@ def _sorted_topics(data, args):
                      " ".join(t.get("documentedFacts", []))]
             return " ".join(parts).lower()
         topics = [t for t in topics if q in hay(t)]
-    topics.sort(key=lambda t: t["controversyScore"], reverse=True)
+    # Featured (priority) topics are pinned to the top, then ranked by controversy.
+    topics.sort(key=lambda t: (not t.get("featured", False), -t["controversyScore"]))
     return topics
 
 
@@ -110,7 +111,8 @@ def _print_list(data, topics):
         print(dim("No matching topics."))
         return
     for t in topics:
-        print(f"{meter(t['controversyScore'])}  {bold(t['title'])}")
+        star = yellow("★ PRIORITY  ") if t.get("featured") else ""
+        print(f"{meter(t['controversyScore'])}  {star}{bold(t['title'])}")
         print(f"  {cyan(t['id'])}  ·  {dim(cat_label(data, t['category']))}  ·  {dim(t['era'])}")
         print(textwrap.fill(t["summary"], width=88, initial_indent="  ", subsequent_indent="  "))
         print()
@@ -154,6 +156,8 @@ def cmd_show(data, args):
         return
 
     print("=" * 92)
+    if t.get("featured"):
+        print(yellow("★ PRIORITY TOPIC"))
     print(bold(t["title"]))
     print(f"{dim(cat_label(data, t['category']))}  ·  {dim(t['era'])}  ·  {meter(t['controversyScore'])}")
     print("=" * 92 + "\n")
