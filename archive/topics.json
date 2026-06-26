@@ -4,7 +4,7 @@
     "description": "A curated, source-linked archive of the most contested episodes in modern Sri Lankan politics. Each entry presents the mainstream account, the competing narratives, the documented facts, and what remains unresolved or under-reported.",
     "disclaimer": "This archive is an educational research aid. 'Hidden truth' here means the contested, disputed, or under-reported dimensions of each episode — not conspiracy. Entries deliberately present multiple viewpoints. Sources are starting points for your own verification; always read them critically and consult primary documents where possible.",
     "lastUpdated": "2026-06-26",
-    "version": "1.1.0"
+    "version": "1.1.1"
   },
   "categories": [
     { "id": "war", "label": "Civil War & Accountability", "color": "#c0392b" },
@@ -42,9 +42,9 @@
       "sources": [
         { "label": "Wikipedia: Sri Lankan Civil War", "url": "https://en.wikipedia.org/wiki/Sri_Lankan_Civil_War" },
         { "label": "Wikipedia: Eelam War IV (the final phase)", "url": "https://en.wikipedia.org/wiki/Eelam_War_IV" },
-        { "label": "Wikipedia: Allegations of war crimes (final stages)", "url": "https://en.wikipedia.org/wiki/Allegations_of_war_crimes_during_the_final_stages_of_the_Sri_Lankan_Civil_War" },
+        { "label": "Wikipedia: War crimes during the final stages of the Sri Lankan civil war", "url": "https://en.wikipedia.org/wiki/War_crimes_during_the_final_stages_of_the_Sri_Lankan_civil_war" },
         { "label": "Wikipedia: Tamil genocide / Mullivaikkal commemoration", "url": "https://en.wikipedia.org/wiki/Tamil_genocide" },
-        { "label": "UN Report of the Secretary-General's Panel of Experts on Accountability in Sri Lanka (2011)", "url": "https://www.un.org/News/dh/infocus/Sri_Lanka/POE_Report_Full.pdf" },
+        { "label": "Wikipedia: Report of the UN Secretary-General's Panel of Experts on Accountability in Sri Lanka (2011)", "url": "https://en.wikipedia.org/wiki/Report_of_the_Secretary-General%27s_Panel_of_Experts_on_Accountability_in_Sri_Lanka" },
         { "label": "OHCHR Investigation on Sri Lanka (OISL)", "url": "https://www.ohchr.org/en/hr-bodies/hrc/sri-lanka/oisl" },
         { "label": "Wikipedia: Sri Lanka's Killing Fields (Channel 4)", "url": "https://en.wikipedia.org/wiki/Sri_Lanka%27s_Killing_Fields" }
       ]
@@ -144,7 +144,7 @@
       ],
       "stillContested": "The full chain of political responsibility, the recovery of losses, and the failure to extradite or convict all key figures.",
       "sources": [
-        { "label": "Wikipedia: Sri Lankan central bank bond scandal", "url": "https://en.wikipedia.org/wiki/Sri_Lankan_central_bank_bond_scandal" }
+        { "label": "Wikipedia: Central Bank of Sri Lanka bond scandal", "url": "https://en.wikipedia.org/wiki/Central_Bank_of_Sri_Lanka_bond_scandal" }
       ]
     },
     {

@@ -43,10 +43,31 @@ python3 cli.py show easter           # full dossier (id or fuzzy title)
 python3 cli.py categories            # list category ids + counts
 python3 cli.py random                # surface a random controversy
 python3 cli.py validate              # sanity-check the data file
+python3 cli.py linkcheck             # ping every source URL, report broken links
 ```
 
-Add `--json` to `list`, `search`, or `show` for machine-readable output you can pipe
-into other tools.
+Add `--json` to `list`, `search`, `show`, or `linkcheck` for machine-readable output you
+can pipe into other tools.
+
+### Verifying source links
+
+`linkcheck` fetches every unique source URL concurrently and sorts the results into three
+buckets:
+
+- **✓ ok** — resolved (HTTP < 400).
+- **‼ blocked** — reachable but the host refuses automated clients (401/403/429/451). These
+  are real pages behind a bot/rate-limit wall (e.g. some UN/OHCHR pages) — open them in a
+  browser to confirm. They do **not** fail the run.
+- **✗ broken** — genuinely dead (404, 5xx, DNS/TLS failure). Any broken link makes the
+  command exit non-zero, so it doubles as a CI check.
+
+```bash
+python3 cli.py linkcheck --timeout 25 --workers 8   # tune network behaviour
+python3 cli.py linkcheck --json > link-report.json  # machine-readable audit
+```
+
+It honours the standard `HTTPS_PROXY`/`SSL_CERT_FILE` environment so it works from behind
+a corporate or sandbox proxy.
 
 ---
 
@@ -95,15 +116,18 @@ All content lives in `archive/topics.json`. To add a topic, append an object to 
 | `documentedFacts` | string[] | points with broad evidentiary support |
 | `stillContested` | string | what remains unresolved or under-reported |
 | `sources` | `{label,url}[]` | each `url` must start with `http` |
+| `featured` | boolean | optional; pins the topic to the top as a "priority" entry |
 
-After editing, run the validator:
+After editing, run the validator and the link checker:
 
 ```bash
-python3 cli.py validate
+python3 cli.py validate     # structure: fields, ids, categories, scores, URL shape
+python3 cli.py linkcheck    # network: every source URL actually resolves
 ```
 
-It checks for missing fields, duplicate ids, unknown categories, out-of-range scores, and
-malformed source URLs.
+`validate` checks for missing fields, duplicate ids, unknown categories, out-of-range
+scores, a well-typed `featured` flag, and malformed source URLs. `linkcheck` then confirms
+the URLs are live (see [Verifying source links](#verifying-source-links)).
 
 ---
 
