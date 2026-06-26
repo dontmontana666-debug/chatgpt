@@ -1,0 +1,354 @@
+{
+  "meta": {
+    "title": "Sri Lankan Politics: Controversy Archive",
+    "description": "A curated, source-linked archive of the most contested episodes in modern Sri Lankan politics. Each entry presents the mainstream account, the competing narratives, the documented facts, and what remains unresolved or under-reported.",
+    "disclaimer": "This archive is an educational research aid. 'Hidden truth' here means the contested, disputed, or under-reported dimensions of each episode — not conspiracy. Entries deliberately present multiple viewpoints. Sources are starting points for your own verification; always read them critically and consult primary documents where possible.",
+    "lastUpdated": "2026-06-26",
+    "version": "1.0.0"
+  },
+  "categories": [
+    { "id": "war", "label": "Civil War & Accountability", "color": "#c0392b" },
+    { "id": "human-rights", "label": "Human Rights & Disappearances", "color": "#8e44ad" },
+    { "id": "corruption", "label": "Corruption & Finance", "color": "#d4a017" },
+    { "id": "constitutional", "label": "Constitutional & Power Struggles", "color": "#2980b9" },
+    { "id": "ethnic", "label": "Ethnic & Communal Conflict", "color": "#e67e22" },
+    { "id": "geopolitics", "label": "Geopolitics & Sovereignty", "color": "#16a085" }
+  ],
+  "topics": [
+    {
+      "id": "war-final-phase-2009",
+      "title": "The Final Phase of the Civil War (2009) and Alleged War Crimes",
+      "category": "war",
+      "era": "2008–2009",
+      "controversyScore": 10,
+      "summary": "The military defeat of the LTTE in May 2009 ended a 26-year war, but the conduct of the final months — fighting concentrated in 'No Fire Zones' packed with civilians — produced enduring allegations of mass civilian deaths, shelling of hospitals, and summary executions.",
+      "mainstreamAccount": "The government characterised the offensive as a 'humanitarian rescue operation' that liberated civilians held as a human shield by the LTTE, and stated it followed a 'zero civilian casualty' policy.",
+      "competingNarratives": [
+        "A UN expert panel found credible allegations that tens of thousands of civilians died, many from government shelling of areas it had itself declared safe.",
+        "The LTTE is credibly accused of using civilians as human shields and shooting those who tried to flee.",
+        "Estimates of civilian deaths in the final months range widely — from around 7,000 (early UN field estimates) to 40,000 or more (UN panel) and over 70,000 (some later analyses)."
+      ],
+      "documentedFacts": [
+        "The UN Secretary-General's Panel of Experts (2011) found credible allegations of serious violations by both sides.",
+        "The OHCHR Investigation on Sri Lanka (OISL, 2015) documented patterns of unlawful killings, shelling, and disappearances.",
+        "Sri Lanka co-sponsored UN Human Rights Council Resolution 30/1 (2015) committing to accountability mechanisms, then withdrew support in 2020."
+      ],
+      "stillContested": "The true civilian death toll, the degree of intent behind shelling of No Fire Zones, and whether any credible domestic accountability process will ever occur. Successive governments have rejected international investigation; victims' families continue to demand answers.",
+      "sources": [
+        { "label": "Wikipedia: Sri Lankan Civil War – final offensive", "url": "https://en.wikipedia.org/wiki/Sri_Lankan_Civil_War" },
+        { "label": "UN Report of the Secretary-General's Panel of Experts on Accountability in Sri Lanka (2011)", "url": "https://www.un.org/News/dh/infocus/Sri_Lanka/POE_Report_Full.pdf" },
+        { "label": "OHCHR Investigation on Sri Lanka (OISL)", "url": "https://www.ohchr.org/en/hr-bodies/hrc/sri-lanka/oisl" },
+        { "label": "Wikipedia: No Fire Zone (allegations)", "url": "https://en.wikipedia.org/wiki/Allegations_of_war_crimes_during_the_final_stages_of_the_Sri_Lankan_Civil_War" }
+      ]
+    },
+    {
+      "id": "black-july-1983",
+      "title": "Black July 1983: The Anti-Tamil Pogrom",
+      "category": "ethnic",
+      "era": "July 1983",
+      "controversyScore": 9,
+      "summary": "Over several days in July 1983, organised mobs killed hundreds to thousands of Tamils, destroyed homes and businesses, and triggered mass displacement. The event is widely regarded as the spark that escalated the separatist conflict into full civil war.",
+      "mainstreamAccount": "Officially framed at the time as a spontaneous communal reaction to the LTTE's ambush killing of 13 soldiers in Jaffna.",
+      "competingNarratives": [
+        "Survivor testimony and later scholarship describe organised mobs using voter registration lists and electoral rolls to target Tamil homes and shops — evidence of premeditation, not spontaneity.",
+        "Allegations persist that elements of the state and ruling party were complicit or passive while violence unfolded.",
+        "The scale of killing is disputed, with estimates from several hundred to 3,000+."
+      ],
+      "documentedFacts": [
+        "Tens of thousands of Tamils fled the country, fuelling the global Tamil diaspora.",
+        "The government's response, including a constitutional amendment banning separatist advocacy, pushed many Tamil youth toward militancy.",
+        "The pogrom is a foundational reference point in Tamil collective memory and in the LTTE's recruitment narrative."
+      ],
+      "stillContested": "The degree of official orchestration or complicity, the precise death toll, and the lack of any meaningful prosecution of perpetrators decades later.",
+      "sources": [
+        { "label": "Wikipedia: Black July", "url": "https://en.wikipedia.org/wiki/Black_July" },
+        { "label": "Wikipedia: Sri Lankan Civil War – origins", "url": "https://en.wikipedia.org/wiki/Sri_Lankan_Civil_War" }
+      ]
+    },
+    {
+      "id": "jvp-insurrections",
+      "title": "The JVP Insurrections (1971 and 1987–89) and State Suppression",
+      "category": "human-rights",
+      "era": "1971; 1987–1989",
+      "controversyScore": 8,
+      "summary": "Two Marxist uprisings led by the Janatha Vimukthi Peramuna (JVP) were crushed by the state. The second, in the late 1980s, was met with a counter-insurgency campaign marked by mass disappearances, extrajudicial killings, and 'death squads'.",
+      "mainstreamAccount": "The state framed its response as necessary to defend the elected government against armed insurrection and terror.",
+      "competingNarratives": [
+        "Human rights organisations documented tens of thousands of disappearances and bodies dumped or burned — 'tyre pyres' became a symbol of the era.",
+        "Both the JVP and the state carried out atrocities; civilians were caught between them.",
+        "Many perpetrators on the state side were never identified or prosecuted; some later held high office."
+      ],
+      "documentedFacts": [
+        "Estimates of deaths and disappearances in 1987–89 commonly range from 30,000 to 60,000.",
+        "Several presidential commissions of inquiry into disappearances were established in the 1990s.",
+        "The JVP later entered democratic politics and remains an electoral force."
+      ],
+      "stillContested": "The full death toll, the identities of those who ordered killings, and why accountability for state actors has been so limited.",
+      "sources": [
+        { "label": "Wikipedia: 1987–1989 JVP insurrection", "url": "https://en.wikipedia.org/wiki/1987%E2%80%931989_JVP_insurrection" },
+        { "label": "Wikipedia: 1971 JVP insurrection", "url": "https://en.wikipedia.org/wiki/1971_JVP_insurrection" }
+      ]
+    },
+    {
+      "id": "easter-bombings-2019",
+      "title": "The 2019 Easter Sunday Bombings and the 'Conspiracy' Question",
+      "category": "human-rights",
+      "era": "April 2019",
+      "controversyScore": 9,
+      "summary": "Coordinated suicide bombings of churches and hotels on Easter Sunday 2019 killed more than 250 people. Beyond the attack itself, the controversy centres on ignored intelligence warnings and persistent allegations that the plot was enabled or exploited for political ends.",
+      "mainstreamAccount": "A local Islamist group inspired by ISIS carried out the attacks; officials cited a breakdown in intelligence-sharing amid a feud at the top of government.",
+      "competingNarratives": [
+        "Prior, specific foreign intelligence warnings were not acted upon — a failure officials have blamed on each other.",
+        "The Catholic Church, led by the Archbishop of Colombo, has repeatedly alleged a 'grand conspiracy' and demanded to know who benefited politically.",
+        "Critics note the attacks preceded an election in which a hardline security platform proved decisive, fuelling suspicion the threat was allowed to mature."
+      ],
+      "documentedFacts": [
+        "A Presidential Commission of Inquiry recommended action against former officials, including a former president, for negligence.",
+        "Multiple investigations confirmed advance warnings existed and were not escalated.",
+        "Survivors and the Church continue to reject official findings as incomplete."
+      ],
+      "stillContested": "Whether negligence alone explains the failure, who (if anyone) deliberately allowed the plot to proceed, and why full accountability has stalled.",
+      "sources": [
+        { "label": "Wikipedia: 2019 Sri Lanka Easter bombings", "url": "https://en.wikipedia.org/wiki/2019_Sri_Lanka_Easter_bombings" }
+      ]
+    },
+    {
+      "id": "central-bank-bond-scam-2015",
+      "title": "The Central Bank Bond Scam (2015–2016)",
+      "category": "corruption",
+      "era": "2015–2016",
+      "controversyScore": 8,
+      "summary": "Irregularities in the issuance of government bonds by the Central Bank of Sri Lanka, involving a primary dealer linked by marriage to the Central Bank Governor, became one of the country's highest-profile financial scandals — striking because it implicated a government elected on an anti-corruption platform.",
+      "mainstreamAccount": "Initially framed by some in government as a routine auction; the Governor defended the process.",
+      "competingNarratives": [
+        "A bond-trading firm connected to the Governor's son-in-law reaped outsized profits, suggesting insider advantage.",
+        "A Presidential Commission of Inquiry found serious irregularities and losses to the state.",
+        "The scandal split the governing coalition and damaged the reformist 'good governance' (yahapalanaya) brand."
+      ],
+      "documentedFacts": [
+        "The Central Bank Governor (Arjuna Mahendran) was later wanted in connection with the case.",
+        "Courts convicted at least one principal figure (Arjun Aloysius's firm Perpetual Treasuries was central to proceedings).",
+        "Estimated losses to the state ran into billions of rupees."
+      ],
+      "stillContested": "The full chain of political responsibility, the recovery of losses, and the failure to extradite or convict all key figures.",
+      "sources": [
+        { "label": "Wikipedia: Sri Lankan central bank bond scandal", "url": "https://en.wikipedia.org/wiki/Sri_Lankan_central_bank_bond_scandal" }
+      ]
+    },
+    {
+      "id": "rajapaksa-dynasty",
+      "title": "The Rajapaksa Family and Allegations of Dynastic Capture",
+      "category": "corruption",
+      "era": "2005–2022",
+      "controversyScore": 9,
+      "summary": "Across multiple presidencies and cabinets, members of the Rajapaksa family held the presidency, premiership, finance, defence and other portfolios simultaneously, prompting accusations of family rule, corruption, and the hollowing-out of institutions.",
+      "mainstreamAccount": "Supporters credit Mahinda Rajapaksa with ending the war and delivering infrastructure and stability.",
+      "competingNarratives": [
+        "Critics allege the family concentrated state power, controlled a large share of the national budget through their ministries, and presided over opaque, debt-financed megaprojects.",
+        "Allegations of corruption, nepotism, and suppression of dissent recurred across investigations and media reports.",
+        "The 2022 economic collapse crystallised public anger into the 'Aragalaya' protests that forced the family from power."
+      ],
+      "documentedFacts": [
+        "At their peak, family members controlled ministries accounting for a very large portion of state spending.",
+        "Mass protests in 2022 led to the resignation of PM Mahinda Rajapaksa and the flight and resignation of President Gotabaya Rajapaksa.",
+        "Numerous corruption investigations were opened, paused, and reopened depending on who held power."
+      ],
+      "stillContested": "How much of the country's debt crisis is attributable to family-linked projects and corruption versus global shocks, and whether any prosecution will succeed.",
+      "sources": [
+        { "label": "Wikipedia: Rajapaksa family", "url": "https://en.wikipedia.org/wiki/Rajapaksa_family" },
+        { "label": "Wikipedia: 2022 Sri Lankan protests (Aragalaya)", "url": "https://en.wikipedia.org/wiki/2022_Sri_Lankan_protests" }
+      ]
+    },
+    {
+      "id": "economic-crisis-2022",
+      "title": "The 2022 Economic Collapse and the Aragalaya",
+      "category": "corruption",
+      "era": "2021–2022",
+      "controversyScore": 9,
+      "summary": "Sri Lanka defaulted on its foreign debt for the first time in its history amid shortages of fuel, food, medicine and electricity. A mass protest movement (the 'Aragalaya', or 'struggle') occupied central Colombo and toppled the president.",
+      "mainstreamAccount": "Officials blamed external shocks: the COVID-19 collapse of tourism, the Ukraine war's effect on commodity prices, and global conditions.",
+      "competingNarratives": [
+        "Economists point to self-inflicted causes: deep 2019 tax cuts that gutted revenue, money printing, a stubborn defence of an overvalued rupee, and a sudden, ruinous ban on chemical fertiliser.",
+        "Years of borrowing for low-return projects left the country exposed when markets tightened.",
+        "Critics argue elite mismanagement and corruption, not just bad luck, drove the collapse."
+      ],
+      "documentedFacts": [
+        "Sri Lanka announced a sovereign default in April 2022.",
+        "An IMF Extended Fund Facility was agreed in 2023 with austerity conditions.",
+        "President Gotabaya Rajapaksa fled the country and resigned in July 2022 after protesters stormed the presidential residence."
+      ],
+      "stillContested": "The balance of blame between external shocks and domestic policy, who profited from the debt build-up, and whether IMF-mandated austerity falls hardest on ordinary citizens.",
+      "sources": [
+        { "label": "Wikipedia: Sri Lankan economic crisis (2019–present)", "url": "https://en.wikipedia.org/wiki/Sri_Lankan_economic_crisis_(2019%E2%80%93present)" },
+        { "label": "Wikipedia: 2022 Sri Lankan protests", "url": "https://en.wikipedia.org/wiki/2022_Sri_Lankan_protests" }
+      ]
+    },
+    {
+      "id": "lasantha-journalists",
+      "title": "The Killing of Lasantha Wickrematunge and the War on Journalists",
+      "category": "human-rights",
+      "era": "2009 and surrounding years",
+      "controversyScore": 8,
+      "summary": "Editor Lasantha Wickrematunge, a prominent government critic, was murdered in 2009. His posthumously published editorial predicted his own killing and named the government as responsible — making his death emblematic of a broader pattern of attacks on the press.",
+      "mainstreamAccount": "Officials denied state involvement and investigations stalled for years.",
+      "competingNarratives": [
+        "Wickrematunge's own posthumous editorial, 'And Then They Came For Me', directly implicated the government.",
+        "Multiple journalists and media outlets were attacked, abducted, or killed during the war years; many cases were never solved.",
+        "Later investigations alleged military intelligence involvement, but prosecutions repeatedly faltered."
+      ],
+      "documentedFacts": [
+        "Press-freedom organisations ranked Sri Lanka among the most dangerous countries for journalists during this period.",
+        "The cartoonist and journalist Prageeth Eknaligoda disappeared in 2010 and remains missing.",
+        "Investigations into these cases advanced and reversed depending on the government in power."
+      ],
+      "stillContested": "Who ordered the killings and abductions, why investigations collapse when certain figures return to power, and whether justice is now politically impossible.",
+      "sources": [
+        { "label": "Wikipedia: Lasantha Wickrematunge", "url": "https://en.wikipedia.org/wiki/Lasantha_Wickrematunge" },
+        { "label": "Wikipedia: Prageeth Eknaligoda", "url": "https://en.wikipedia.org/wiki/Prageeth_Eknaligoda" }
+      ]
+    },
+    {
+      "id": "enforced-disappearances",
+      "title": "Enforced Disappearances and the Missing Tens of Thousands",
+      "category": "human-rights",
+      "era": "1980s–present",
+      "controversyScore": 9,
+      "summary": "Across the JVP insurrections and the civil war, Sri Lanka accumulated one of the world's highest totals of enforced disappearances. Families — especially Tamil mothers of the missing — have held some of the longest continuous protests in the country's history.",
+      "mainstreamAccount": "Successive governments established commissions and an Office on Missing Persons, framing the issue as being addressed.",
+      "competingNarratives": [
+        "Victims' families say commissions have produced testimony but almost no truth, accountability, or return of the missing.",
+        "Many of those who 'surrendered' to the army at the war's end were never seen again.",
+        "Activists allege a deliberate strategy of denial and delay to outlast the families' campaigns."
+      ],
+      "documentedFacts": [
+        "The UN Working Group on Enforced or Involuntary Disappearances has logged tens of thousands of Sri Lankan cases over decades.",
+        "An Office on Missing Persons (OMP) was established by law in 2016.",
+        "Continuous roadside protests by families of the disappeared have run for years in the north and east."
+      ],
+      "stillContested": "What happened to those who surrendered at the war's end, the true number of the missing, and whether the OMP can deliver answers or functions mainly to manage international pressure.",
+      "sources": [
+        { "label": "Wikipedia: Enforced disappearances in Sri Lanka", "url": "https://en.wikipedia.org/wiki/Enforced_disappearance" },
+        { "label": "OHCHR: Sri Lanka", "url": "https://www.ohchr.org/en/countries/sri-lanka" }
+      ]
+    },
+    {
+      "id": "13th-amendment-indo-lanka",
+      "title": "The Indo-Lanka Accord and the 13th Amendment",
+      "category": "constitutional",
+      "era": "1987–present",
+      "controversyScore": 7,
+      "summary": "The 1987 Indo-Lanka Accord, signed under Indian pressure, introduced provincial councils and a degree of devolution via the 13th Amendment. Decades on, it remains a flashpoint: too much for Sinhala nationalists, too little for Tamil federalists, and never fully implemented.",
+      "mainstreamAccount": "Presented as a peace settlement that would devolve power to provinces and reduce ethnic grievance.",
+      "competingNarratives": [
+        "Sinhala nationalists view it as an imposition by India that threatens the unitary state and should be repealed.",
+        "Tamil parties argue police and land powers promised under it were never devolved, making it hollow.",
+        "The accord and the accompanying Indian Peace Keeping Force (IPKF) deployment were deeply unpopular and bloody."
+      ],
+      "documentedFacts": [
+        "The 13th Amendment created provincial councils that still exist (though elections to them have been delayed for years).",
+        "The IPKF ended up fighting the LTTE it was meant to disarm, suffering heavy casualties before withdrawing in 1990.",
+        "Full implementation — especially police and land powers — remains contested in every election cycle."
+      ],
+      "stillContested": "Whether devolution is the solution or a threat, why provincial council elections keep being postponed, and the role of Indian strategic interest in the arrangement.",
+      "sources": [
+        { "label": "Wikipedia: Thirteenth Amendment to the Constitution of Sri Lanka", "url": "https://en.wikipedia.org/wiki/Thirteenth_Amendment_to_the_Constitution_of_Sri_Lanka" },
+        { "label": "Wikipedia: Indo-Sri Lanka Accord", "url": "https://en.wikipedia.org/wiki/Indo-Sri_Lanka_Accord" }
+      ]
+    },
+    {
+      "id": "constitutional-crisis-2018",
+      "title": "The 2018 Constitutional Crisis",
+      "category": "constitutional",
+      "era": "October–December 2018",
+      "controversyScore": 7,
+      "summary": "President Maithripala Sirisena abruptly sacked Prime Minister Ranil Wickremesinghe and appointed Mahinda Rajapaksa, then dissolved parliament — triggering a 51-day crisis with two men claiming the premiership until the courts intervened.",
+      "mainstreamAccount": "Sirisena framed the move as within his presidential powers and necessary for stability.",
+      "competingNarratives": [
+        "Critics called it an unconstitutional power grab that violated the 19th Amendment.",
+        "The Supreme Court ultimately ruled the dissolution of parliament unconstitutional.",
+        "The episode exposed how fragile institutional checks were against executive overreach."
+      ],
+      "documentedFacts": [
+        "Parliament passed no-confidence motions against the Rajapaksa-led government.",
+        "The Supreme Court reinstated parliament and Wickremesinghe was restored as PM.",
+        "The crisis is widely seen as a constitutional stress test the institutions barely passed."
+      ],
+      "stillContested": "How close the country came to a lasting breakdown, the motives behind Sirisena's gamble, and whether the precedent weakened constitutional norms.",
+      "sources": [
+        { "label": "Wikipedia: 2018 Sri Lankan constitutional crisis", "url": "https://en.wikipedia.org/wiki/2018_Sri_Lankan_constitutional_crisis" }
+      ]
+    },
+    {
+      "id": "hambantota-china-debt",
+      "title": "Hambantota Port and the 'Debt-Trap Diplomacy' Debate",
+      "category": "geopolitics",
+      "era": "2007–present",
+      "controversyScore": 8,
+      "summary": "The Chinese-financed Hambantota port, built in the home district of the Rajapaksas, became unprofitable and was leased to a Chinese state company for 99 years. It is the world's most-cited example in the 'Chinese debt-trap diplomacy' debate — a framing that is itself contested.",
+      "mainstreamAccount": "Often presented internationally as proof that China deliberately ensnares nations in debt to seize strategic assets.",
+      "competingNarratives": [
+        "Several researchers argue the 'debt trap' label is misleading: most Sri Lankan debt was owed to financial markets and Western-aligned lenders, not China, and the lease raised cash to pay other creditors.",
+        "Others maintain the project was a politically motivated vanity build with little commercial logic, financed on poor terms.",
+        "Indian and Western strategic anxiety over a Chinese foothold near key sea lanes colours much of the coverage."
+      ],
+      "documentedFacts": [
+        "The port was leased to China Merchants Port Holdings in 2017 for about US$1.1 billion and a 99-year term.",
+        "At default in 2022, the largest shares of Sri Lanka's external debt were market borrowings (sovereign bonds) and multilateral lenders, with China one of several bilateral creditors.",
+        "The port has had military and strategic significance in regional rivalry."
+      ],
+      "stillContested": "Whether 'debt-trap diplomacy' is an accurate description or a geopolitical narrative, who really drove the country into unsustainable debt, and the strategic implications of the lease.",
+      "sources": [
+        { "label": "Wikipedia: Hambantota International Port", "url": "https://en.wikipedia.org/wiki/Hambantota_International_Port" },
+        { "label": "Wikipedia: Debt-trap diplomacy", "url": "https://en.wikipedia.org/wiki/Debt-trap_diplomacy" }
+      ]
+    },
+    {
+      "id": "pta-detention",
+      "title": "The Prevention of Terrorism Act (PTA) and Detention Without Trial",
+      "category": "human-rights",
+      "era": "1979–present",
+      "controversyScore": 7,
+      "summary": "Enacted in 1979 as a 'temporary' measure, the PTA allows prolonged detention without charge and has been used for decades against Tamils, Muslims, dissidents, and critics. Repeated promises to repeal or reform it have not materialised.",
+      "mainstreamAccount": "Defended by governments as essential counter-terrorism legislation.",
+      "competingNarratives": [
+        "Rights groups document its use to detain people for years without trial, to extract confessions under duress, and to silence dissent.",
+        "Its application broadened after the 2019 Easter attacks to target the Muslim community.",
+        "The EU has tied trade preferences (GSP+) to PTA reform, with limited results."
+      ],
+      "documentedFacts": [
+        "The PTA permits extended administrative detention and admits confessions made to police.",
+        "Numerous detainees have been held for many years without trial under its provisions.",
+        "Successive governments pledged repeal or replacement; the law remains in force."
+      ],
+      "stillContested": "Why a 'temporary' 1979 law endures, how many remain detained under it, and whether reform is genuine or cosmetic to satisfy trade partners.",
+      "sources": [
+        { "label": "Wikipedia: Prevention of Terrorism Act (Sri Lanka)", "url": "https://en.wikipedia.org/wiki/Prevention_of_Terrorism_Act_(Sri_Lanka)" },
+        { "label": "Amnesty International: Sri Lanka", "url": "https://www.amnesty.org/en/location/asia-and-the-pacific/south-asia/sri-lanka/" }
+      ]
+    },
+    {
+      "id": "executive-presidency",
+      "title": "The Executive Presidency and the Cycle of Broken Abolition Promises",
+      "category": "constitutional",
+      "era": "1978–present",
+      "controversyScore": 6,
+      "summary": "The 1978 constitution created a powerful executive presidency. Nearly every president since has campaigned on abolishing or curbing it — then kept or expanded its powers. The amendments to the constitution have swung between curbing (19th) and restoring (20th) presidential power.",
+      "mainstreamAccount": "Defenders argue a strong executive provides stability and decisiveness for a divided country.",
+      "competingNarratives": [
+        "Critics say it concentrates power dangerously, undermines parliament and the judiciary, and enables authoritarian drift.",
+        "The repeated pattern — promise abolition, win office, retain power — has bred deep public cynicism.",
+        "The 18th, 19th, 20th and 21st Amendments show power oscillating with whoever holds the presidency."
+      ],
+      "documentedFacts": [
+        "The 19th Amendment (2015) curbed presidential powers and strengthened independent commissions.",
+        "The 20th Amendment (2020) reversed many of those curbs, re-empowering the president.",
+        "Abolition of the executive presidency has been a campaign promise for decades without being delivered."
+      ],
+      "stillContested": "Whether the system can ever be reformed by those it benefits, and how much it is responsible for governance failures and the 2022 collapse.",
+      "sources": [
+        { "label": "Wikipedia: Executive President of Sri Lanka", "url": "https://en.wikipedia.org/wiki/President_of_Sri_Lanka" },
+        { "label": "Wikipedia: Nineteenth Amendment to the Constitution of Sri Lanka", "url": "https://en.wikipedia.org/wiki/Nineteenth_Amendment_to_the_Constitution_of_Sri_Lanka" }
+      ]
+    }
+  ]
+}
