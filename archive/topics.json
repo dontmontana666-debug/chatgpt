@@ -4,15 +4,39 @@
     "description": "A curated, source-linked archive of the most contested episodes in modern Sri Lankan politics. Each entry presents the mainstream account, the competing narratives, the documented facts, and what remains unresolved or under-reported.",
     "disclaimer": "This archive is an educational research aid. 'Hidden truth' here means the contested, disputed, or under-reported dimensions of each episode — not conspiracy. Entries deliberately present multiple viewpoints. Sources are starting points for your own verification; always read them critically and consult primary documents where possible.",
     "lastUpdated": "2026-06-26",
-    "version": "1.1.1"
+    "version": "1.2.0"
   },
   "categories": [
-    { "id": "war", "label": "Civil War & Accountability", "color": "#c0392b" },
-    { "id": "human-rights", "label": "Human Rights & Disappearances", "color": "#8e44ad" },
-    { "id": "corruption", "label": "Corruption & Finance", "color": "#d4a017" },
-    { "id": "constitutional", "label": "Constitutional & Power Struggles", "color": "#2980b9" },
-    { "id": "ethnic", "label": "Ethnic & Communal Conflict", "color": "#e67e22" },
-    { "id": "geopolitics", "label": "Geopolitics & Sovereignty", "color": "#16a085" }
+    {
+      "id": "war",
+      "label": "Civil War & Accountability",
+      "color": "#c0392b"
+    },
+    {
+      "id": "human-rights",
+      "label": "Human Rights & Disappearances",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "corruption",
+      "label": "Corruption & Finance",
+      "color": "#d4a017"
+    },
+    {
+      "id": "constitutional",
+      "label": "Constitutional & Power Struggles",
+      "color": "#2980b9"
+    },
+    {
+      "id": "ethnic",
+      "label": "Ethnic & Communal Conflict",
+      "color": "#e67e22"
+    },
+    {
+      "id": "geopolitics",
+      "label": "Geopolitics & Sovereignty",
+      "color": "#16a085"
+    }
   ],
   "topics": [
     {
@@ -25,29 +49,204 @@
       "summary": "The 26-year war between the Sri Lankan state and the LTTE — fought to establish a Tamil homeland, 'Tamil Eelam' — ended with the military's victory at Mullivaikkal in May 2009. The conduct of the final months, with fighting concentrated in government-declared 'No Fire Zones' packed with civilians, produced enduring allegations of mass civilian deaths, shelling of hospitals, summary executions, and — in the Tamil account — genocide.",
       "mainstreamAccount": "The government characterised the offensive as a 'humanitarian rescue operation' that liberated civilians held as a human shield by the LTTE, and stated it followed a 'zero civilian casualty' policy.",
       "competingNarratives": [
-        "A UN expert panel found credible allegations that tens of thousands of civilians died, many from government shelling of areas it had itself declared safe.",
-        "Tamil political bodies and the diaspora describe the final phase — and the war's pattern as a whole — as genocide, commemorated annually as Mullivaikkal Remembrance Day; the framing is rejected by the Sri Lankan state and contested by some scholars.",
-        "The LTTE is credibly accused of using civilians as human shields and shooting those who tried to flee, and ran its own authoritarian, child-recruiting administration.",
-        "The 'white flag' incident: senior LTTE figures who reportedly tried to surrender are alleged to have been killed after giving themselves up.",
-        "Estimates of civilian deaths in the final months range widely — from around 7,000 (early UN field estimates) to 40,000 or more (UN panel) and over 70,000 (some later analyses)."
+        {
+          "text": "A UN expert panel found credible allegations that tens of thousands of civilians died, many from government shelling of areas it had itself declared safe.",
+          "perspective": "international",
+          "sourceIds": [
+            "wp-poe-report",
+            "wp-war-crimes"
+          ]
+        },
+        {
+          "text": "Tamil political bodies and the diaspora describe the final phase — and the war's pattern as a whole — as genocide, commemorated annually as Mullivaikkal Remembrance Day; the framing is rejected by the Sri Lankan state and contested by some scholars.",
+          "perspective": "tamil",
+          "sourceIds": [
+            "wp-tamil-genocide"
+          ]
+        },
+        {
+          "text": "The LTTE is credibly accused of using civilians as human shields and shooting those who tried to flee, and ran its own authoritarian, child-recruiting administration.",
+          "perspective": "state",
+          "sourceIds": [
+            "wp-war-crimes",
+            "wp-civil-war"
+          ]
+        },
+        {
+          "text": "The 'white flag' incident: senior LTTE figures who reportedly tried to surrender are alleged to have been killed after giving themselves up.",
+          "perspective": "contested",
+          "sourceIds": [
+            "wp-war-crimes"
+          ]
+        },
+        {
+          "text": "Estimates of civilian deaths in the final months range widely — from around 7,000 (early UN field estimates) to 40,000 or more (UN panel) and over 70,000 (some later analyses).",
+          "perspective": "international",
+          "sourceIds": [
+            "wp-poe-report",
+            "wp-war-crimes"
+          ]
+        }
       ],
       "documentedFacts": [
-        "The UN Secretary-General's Panel of Experts (2011) found credible allegations of serious violations by both sides.",
-        "The OHCHR Investigation on Sri Lanka (OISL, 2015) documented patterns of unlawful killings, shelling, and disappearances.",
-        "Channel 4's 'Sri Lanka's Killing Fields' (2011) broadcast footage appearing to show summary executions and the bodies of the dead; the government disputed its authenticity, but UN experts assessed key clips as authentic.",
-        "An internal UN review (the Petrie Report, 2012) concluded the UN itself had failed in its responsibilities during the final stages.",
-        "Sri Lanka co-sponsored UN Human Rights Council Resolution 30/1 (2015) committing to accountability mechanisms, then withdrew support in 2020."
+        {
+          "text": "The UN Secretary-General's Panel of Experts (2011) found credible allegations of serious violations by both sides.",
+          "evidence": "official-inquiry",
+          "sourceIds": [
+            "wp-poe-report"
+          ]
+        },
+        {
+          "text": "The OHCHR Investigation on Sri Lanka (OISL, 2015) documented patterns of unlawful killings, shelling, and disappearances.",
+          "evidence": "un-official",
+          "sourceIds": [
+            "ohchr-oisl"
+          ]
+        },
+        {
+          "text": "Channel 4's 'Sri Lanka's Killing Fields' (2011) broadcast footage appearing to show summary executions and the bodies of the dead; the government disputed its authenticity, but UN experts assessed key clips as authentic.",
+          "evidence": "investigative-journalism",
+          "sourceIds": [
+            "wp-killing-fields",
+            "wp-poe-report"
+          ]
+        },
+        {
+          "text": "An internal UN review (the Petrie Report, 2012) concluded the UN itself had failed in its responsibilities during the final stages.",
+          "evidence": "official-inquiry",
+          "sourceIds": [
+            "wp-war-crimes"
+          ]
+        },
+        {
+          "text": "Sri Lanka co-sponsored UN Human Rights Council Resolution 30/1 (2015) committing to accountability mechanisms, then withdrew support in 2020.",
+          "evidence": "official-record",
+          "sourceIds": [
+            "wp-war-crimes",
+            "ohchr-oisl"
+          ]
+        }
       ],
       "stillContested": "The true civilian death toll, whether the conduct of the war amounts to genocide or war crimes (and whose), the degree of intent behind shelling of No Fire Zones, the fate of those who surrendered, and whether any credible accountability process — domestic or international — will ever occur. Successive governments have rejected international investigation; victims' families continue to demand answers.",
+      "actors": [
+        "Sri Lankan Armed Forces",
+        "LTTE",
+        "Mahinda Rajapaksa",
+        "Gotabaya Rajapaksa",
+        "UN OHCHR",
+        "Tamil diaspora",
+        "Channel 4"
+      ],
+      "relatedTopics": [
+        {
+          "id": "black-july-1983",
+          "relation": "caused-by",
+          "note": "the 1983 anti-Tamil pogrom escalated the conflict into full civil war"
+        },
+        {
+          "id": "enforced-disappearances",
+          "relation": "led-to",
+          "note": "many who surrendered at war's end were never seen again"
+        },
+        {
+          "id": "lasantha-journalists",
+          "relation": "same-era",
+          "note": "press critics were killed and abducted during the same final war years"
+        },
+        {
+          "id": "rajapaksa-dynasty",
+          "relation": "same-actors",
+          "note": "the Rajapaksas presided over the victory and resisted accountability"
+        },
+        {
+          "id": "pta-detention",
+          "relation": "context-for",
+          "note": "the PTA enabled wartime detention without trial"
+        }
+      ],
       "sources": [
-        { "label": "Wikipedia: Sri Lankan Civil War", "url": "https://en.wikipedia.org/wiki/Sri_Lankan_Civil_War" },
-        { "label": "Wikipedia: Eelam War IV (the final phase)", "url": "https://en.wikipedia.org/wiki/Eelam_War_IV" },
-        { "label": "Wikipedia: War crimes during the final stages of the Sri Lankan civil war", "url": "https://en.wikipedia.org/wiki/War_crimes_during_the_final_stages_of_the_Sri_Lankan_civil_war" },
-        { "label": "Wikipedia: Tamil genocide / Mullivaikkal commemoration", "url": "https://en.wikipedia.org/wiki/Tamil_genocide" },
-        { "label": "Wikipedia: Report of the UN Secretary-General's Panel of Experts on Accountability in Sri Lanka (2011)", "url": "https://en.wikipedia.org/wiki/Report_of_the_Secretary-General%27s_Panel_of_Experts_on_Accountability_in_Sri_Lanka" },
-        { "label": "OHCHR Investigation on Sri Lanka (OISL)", "url": "https://www.ohchr.org/en/hr-bodies/hrc/sri-lanka/oisl" },
-        { "label": "Wikipedia: Sri Lanka's Killing Fields (Channel 4)", "url": "https://en.wikipedia.org/wiki/Sri_Lanka%27s_Killing_Fields" }
-      ]
+        {
+          "id": "wp-civil-war",
+          "label": "Wikipedia: Sri Lankan Civil War",
+          "url": "https://en.wikipedia.org/wiki/Sri_Lankan_Civil_War",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "wp-eelam4",
+          "label": "Wikipedia: Eelam War IV (the final phase)",
+          "url": "https://en.wikipedia.org/wiki/Eelam_War_IV",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "wp-war-crimes",
+          "label": "Wikipedia: War crimes during the final stages of the Sri Lankan civil war",
+          "url": "https://en.wikipedia.org/wiki/War_crimes_during_the_final_stages_of_the_Sri_Lankan_civil_war",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "wp-tamil-genocide",
+          "label": "Wikipedia: Tamil genocide / Mullivaikkal commemoration",
+          "url": "https://en.wikipedia.org/wiki/Tamil_genocide",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "tamil"
+        },
+        {
+          "id": "wp-poe-report",
+          "label": "Wikipedia: Report of the UN Secretary-General's Panel of Experts on Accountability in Sri Lanka (2011)",
+          "url": "https://en.wikipedia.org/wiki/Report_of_the_Secretary-General%27s_Panel_of_Experts_on_Accountability_in_Sri_Lanka",
+          "type": "official-inquiry",
+          "publisher": "United Nations",
+          "date": "2011",
+          "perspective": "international"
+        },
+        {
+          "id": "ohchr-oisl",
+          "label": "OHCHR Investigation on Sri Lanka (OISL)",
+          "url": "https://www.ohchr.org/en/hr-bodies/hrc/sri-lanka/oisl",
+          "type": "un-official",
+          "publisher": "UN OHCHR",
+          "date": "2015",
+          "perspective": "international"
+        },
+        {
+          "id": "wp-killing-fields",
+          "label": "Wikipedia: Sri Lanka's Killing Fields (Channel 4)",
+          "url": "https://en.wikipedia.org/wiki/Sri_Lanka%27s_Killing_Fields",
+          "type": "investigative-journalism",
+          "publisher": "Channel 4",
+          "date": "2011",
+          "perspective": "international"
+        }
+      ],
+      "evidence": {
+        "score": 87,
+        "grade": "A",
+        "components": {
+          "authority": 25.9,
+          "diversity": 20.0,
+          "citationCoverage": 25.0,
+          "corroboration": 6.0,
+          "balance": 10.0
+        },
+        "maxComponents": {
+          "authority": 30,
+          "diversity": 20,
+          "citationCoverage": 25,
+          "corroboration": 15,
+          "balance": 10
+        }
+      }
     },
     {
       "id": "black-july-1983",
@@ -69,9 +268,33 @@
       ],
       "stillContested": "The degree of official orchestration or complicity, the precise death toll, and the lack of any meaningful prosecution of perpetrators decades later.",
       "sources": [
-        { "label": "Wikipedia: Black July", "url": "https://en.wikipedia.org/wiki/Black_July" },
-        { "label": "Wikipedia: Sri Lankan Civil War – origins", "url": "https://en.wikipedia.org/wiki/Sri_Lankan_Civil_War" }
-      ]
+        {
+          "label": "Wikipedia: Black July",
+          "url": "https://en.wikipedia.org/wiki/Black_July"
+        },
+        {
+          "label": "Wikipedia: Sri Lankan Civil War – origins",
+          "url": "https://en.wikipedia.org/wiki/Sri_Lankan_Civil_War"
+        }
+      ],
+      "evidence": {
+        "score": 25,
+        "grade": "F",
+        "components": {
+          "authority": 13.5,
+          "diversity": 3.3,
+          "citationCoverage": 0.0,
+          "corroboration": 0.0,
+          "balance": 8.0
+        },
+        "maxComponents": {
+          "authority": 30,
+          "diversity": 20,
+          "citationCoverage": 25,
+          "corroboration": 15,
+          "balance": 10
+        }
+      }
     },
     {
       "id": "jvp-insurrections",
@@ -93,9 +316,33 @@
       ],
       "stillContested": "The full death toll, the identities of those who ordered killings, and why accountability for state actors has been so limited.",
       "sources": [
-        { "label": "Wikipedia: 1987–1989 JVP insurrection", "url": "https://en.wikipedia.org/wiki/1987%E2%80%931989_JVP_insurrection" },
-        { "label": "Wikipedia: 1971 JVP insurrection", "url": "https://en.wikipedia.org/wiki/1971_JVP_insurrection" }
-      ]
+        {
+          "label": "Wikipedia: 1987–1989 JVP insurrection",
+          "url": "https://en.wikipedia.org/wiki/1987%E2%80%931989_JVP_insurrection"
+        },
+        {
+          "label": "Wikipedia: 1971 JVP insurrection",
+          "url": "https://en.wikipedia.org/wiki/1971_JVP_insurrection"
+        }
+      ],
+      "evidence": {
+        "score": 25,
+        "grade": "F",
+        "components": {
+          "authority": 13.5,
+          "diversity": 3.3,
+          "citationCoverage": 0.0,
+          "corroboration": 0.0,
+          "balance": 8.0
+        },
+        "maxComponents": {
+          "authority": 30,
+          "diversity": 20,
+          "citationCoverage": 25,
+          "corroboration": 15,
+          "balance": 10
+        }
+      }
     },
     {
       "id": "easter-bombings-2019",
@@ -107,22 +354,152 @@
       "summary": "Coordinated suicide bombings of churches and hotels on Easter Sunday 2019 killed more than 250 people. Beyond the attack itself, the controversy centres on ignored, specific advance warnings and persistent allegations — voiced by the Catholic Church and amplified by later investigative journalism — that the plot was enabled, allowed to mature, or exploited for political ends.",
       "mainstreamAccount": "A local Islamist group (National Thowheeth Jama'ath) inspired by ISIS carried out the attacks; officials cited a breakdown in intelligence-sharing amid a bitter feud between the president and prime minister at the top of government.",
       "competingNarratives": [
-        "Prior, specific foreign intelligence warnings (reportedly from Indian agencies) named targets and individuals days in advance but were not acted upon — a failure officials have blamed on one another.",
-        "The Catholic Church, led by Cardinal Malcolm Ranjith, the Archbishop of Colombo, has repeatedly alleged a 'grand conspiracy' and demanded to know who benefited politically, rejecting the official account as incomplete.",
-        "A 2023 Channel 4 documentary aired allegations from a whistle-blower that a senior state intelligence officer had contact with a figure linked to the bombers, implying elements of the security establishment helped engineer instability before an election — claims the government and the named officer denied and which a parliamentary committee disputed.",
-        "Critics note the attacks preceded an election in which a hardline security platform proved decisive, fuelling suspicion the threat was allowed to mature."
+        {
+          "text": "Prior, specific foreign intelligence warnings (reportedly from Indian agencies) named targets and individuals days in advance but were not acted upon — a failure officials have blamed on one another.",
+          "perspective": "international",
+          "sourceIds": [
+            "wp-easter"
+          ]
+        },
+        {
+          "text": "The Catholic Church, led by Cardinal Malcolm Ranjith, the Archbishop of Colombo, has repeatedly alleged a 'grand conspiracy' and demanded to know who benefited politically, rejecting the official account as incomplete.",
+          "perspective": "catholic-church",
+          "sourceIds": [
+            "wp-easter",
+            "wp-ranjith"
+          ]
+        },
+        {
+          "text": "A 2023 Channel 4 documentary aired allegations from a whistle-blower that a senior state intelligence officer had contact with a figure linked to the bombers, implying elements of the security establishment helped engineer instability before an election — claims the government and the named officer denied and which a parliamentary committee disputed.",
+          "perspective": "contested",
+          "sourceIds": [
+            "wp-easter"
+          ]
+        },
+        {
+          "text": "Critics note the attacks preceded an election in which a hardline security platform proved decisive, fuelling suspicion the threat was allowed to mature.",
+          "perspective": "critics",
+          "sourceIds": [
+            "wp-easter"
+          ]
+        }
       ],
       "documentedFacts": [
-        "A Presidential Commission of Inquiry (2021) found negligence and recommended action against former officials, including former President Maithripala Sirisena.",
-        "In 2023, the Supreme Court found Sirisena and several top security officials liable for failing to prevent the attacks and ordered them to pay compensation to victims.",
-        "Multiple investigations confirmed specific advance warnings existed and were not escalated through the chain of command.",
-        "Survivors and the Church continue to reject official findings as incomplete and demand an independent international inquiry."
+        {
+          "text": "A Presidential Commission of Inquiry (2021) found negligence and recommended action against former officials, including former President Maithripala Sirisena.",
+          "evidence": "official-inquiry",
+          "sourceIds": [
+            "wp-easter",
+            "wp-sirisena"
+          ]
+        },
+        {
+          "text": "In 2023, the Supreme Court found Sirisena and several top security officials liable for failing to prevent the attacks and ordered them to pay compensation to victims.",
+          "evidence": "court-ruling",
+          "sourceIds": [
+            "wp-easter",
+            "wp-sirisena"
+          ]
+        },
+        {
+          "text": "Multiple investigations confirmed specific advance warnings existed and were not escalated through the chain of command.",
+          "evidence": "official-inquiry",
+          "sourceIds": [
+            "wp-easter"
+          ]
+        },
+        {
+          "text": "Survivors and the Church continue to reject official findings as incomplete and demand an independent international inquiry.",
+          "evidence": "testimony",
+          "sourceIds": [
+            "wp-easter",
+            "wp-ranjith"
+          ]
+        }
       ],
       "stillContested": "Whether negligence alone explains the failure, the credibility of the 'grand conspiracy' allegations, who (if anyone) deliberately allowed the plot to proceed, and why full accountability for any masterminds beyond the bombers themselves has stalled.",
+      "actors": [
+        "National Thowheeth Jama'ath",
+        "Maithripala Sirisena",
+        "Cardinal Malcolm Ranjith",
+        "Catholic Church in Sri Lanka",
+        "Sri Lankan intelligence services",
+        "Gotabaya Rajapaksa",
+        "Channel 4"
+      ],
+      "relatedTopics": [
+        {
+          "id": "constitutional-crisis-2018",
+          "relation": "context-for",
+          "note": "the Sirisena–Wickremesinghe feud underlay the intelligence breakdown"
+        },
+        {
+          "id": "rajapaksa-dynasty",
+          "relation": "led-to",
+          "note": "the security backlash helped return the Rajapaksas to power in 2019"
+        },
+        {
+          "id": "pta-detention",
+          "relation": "led-to",
+          "note": "PTA use widened against the Muslim community after the attacks"
+        }
+      ],
       "sources": [
-        { "label": "Wikipedia: 2019 Sri Lanka Easter bombings", "url": "https://en.wikipedia.org/wiki/2019_Sri_Lanka_Easter_bombings" },
-        { "label": "Wikipedia: National Thowheeth Jama'ath", "url": "https://en.wikipedia.org/wiki/National_Thowheeth_Jama%27ath" }
-      ]
+        {
+          "id": "wp-easter",
+          "label": "Wikipedia: 2019 Sri Lanka Easter bombings",
+          "url": "https://en.wikipedia.org/wiki/2019_Sri_Lanka_Easter_bombings",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "wp-ntj",
+          "label": "Wikipedia: National Thowheeth Jama'ath",
+          "url": "https://en.wikipedia.org/wiki/National_Thowheeth_Jama%27ath",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "wp-ranjith",
+          "label": "Wikipedia: Cardinal Malcolm Ranjith (Archbishop of Colombo)",
+          "url": "https://en.wikipedia.org/wiki/Malcolm_Ranjith",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "catholic-church"
+        },
+        {
+          "id": "wp-sirisena",
+          "label": "Wikipedia: Maithripala Sirisena",
+          "url": "https://en.wikipedia.org/wiki/Maithripala_Sirisena",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "state"
+        }
+      ],
+      "evidence": {
+        "score": 92,
+        "grade": "A",
+        "components": {
+          "authority": 25.8,
+          "diversity": 20.0,
+          "citationCoverage": 25.0,
+          "corroboration": 11.2,
+          "balance": 10.0
+        },
+        "maxComponents": {
+          "authority": 30,
+          "diversity": 20,
+          "citationCoverage": 25,
+          "corroboration": 15,
+          "balance": 10
+        }
+      }
     },
     {
       "id": "central-bank-bond-scam-2015",
@@ -144,8 +521,29 @@
       ],
       "stillContested": "The full chain of political responsibility, the recovery of losses, and the failure to extradite or convict all key figures.",
       "sources": [
-        { "label": "Wikipedia: Central Bank of Sri Lanka bond scandal", "url": "https://en.wikipedia.org/wiki/Central_Bank_of_Sri_Lanka_bond_scandal" }
-      ]
+        {
+          "label": "Wikipedia: Central Bank of Sri Lanka bond scandal",
+          "url": "https://en.wikipedia.org/wiki/Central_Bank_of_Sri_Lanka_bond_scandal"
+        }
+      ],
+      "evidence": {
+        "score": 25,
+        "grade": "F",
+        "components": {
+          "authority": 13.5,
+          "diversity": 3.3,
+          "citationCoverage": 0.0,
+          "corroboration": 0.0,
+          "balance": 8.0
+        },
+        "maxComponents": {
+          "authority": 30,
+          "diversity": 20,
+          "citationCoverage": 25,
+          "corroboration": 15,
+          "balance": 10
+        }
+      }
     },
     {
       "id": "rajapaksa-dynasty",
@@ -167,9 +565,33 @@
       ],
       "stillContested": "How much of the country's debt crisis is attributable to family-linked projects and corruption versus global shocks, and whether any prosecution will succeed.",
       "sources": [
-        { "label": "Wikipedia: Rajapaksa family", "url": "https://en.wikipedia.org/wiki/Rajapaksa_family" },
-        { "label": "Wikipedia: 2022 Sri Lankan protests (Aragalaya)", "url": "https://en.wikipedia.org/wiki/2022_Sri_Lankan_protests" }
-      ]
+        {
+          "label": "Wikipedia: Rajapaksa family",
+          "url": "https://en.wikipedia.org/wiki/Rajapaksa_family"
+        },
+        {
+          "label": "Wikipedia: 2022 Sri Lankan protests (Aragalaya)",
+          "url": "https://en.wikipedia.org/wiki/2022_Sri_Lankan_protests"
+        }
+      ],
+      "evidence": {
+        "score": 25,
+        "grade": "F",
+        "components": {
+          "authority": 13.5,
+          "diversity": 3.3,
+          "citationCoverage": 0.0,
+          "corroboration": 0.0,
+          "balance": 8.0
+        },
+        "maxComponents": {
+          "authority": 30,
+          "diversity": 20,
+          "citationCoverage": 25,
+          "corroboration": 15,
+          "balance": 10
+        }
+      }
     },
     {
       "id": "economic-crisis-2022",
@@ -191,9 +613,33 @@
       ],
       "stillContested": "The balance of blame between external shocks and domestic policy, who profited from the debt build-up, and whether IMF-mandated austerity falls hardest on ordinary citizens.",
       "sources": [
-        { "label": "Wikipedia: Sri Lankan economic crisis (2019–present)", "url": "https://en.wikipedia.org/wiki/Sri_Lankan_economic_crisis_(2019%E2%80%93present)" },
-        { "label": "Wikipedia: 2022 Sri Lankan protests", "url": "https://en.wikipedia.org/wiki/2022_Sri_Lankan_protests" }
-      ]
+        {
+          "label": "Wikipedia: Sri Lankan economic crisis (2019–present)",
+          "url": "https://en.wikipedia.org/wiki/Sri_Lankan_economic_crisis_(2019%E2%80%93present)"
+        },
+        {
+          "label": "Wikipedia: 2022 Sri Lankan protests",
+          "url": "https://en.wikipedia.org/wiki/2022_Sri_Lankan_protests"
+        }
+      ],
+      "evidence": {
+        "score": 25,
+        "grade": "F",
+        "components": {
+          "authority": 13.5,
+          "diversity": 3.3,
+          "citationCoverage": 0.0,
+          "corroboration": 0.0,
+          "balance": 8.0
+        },
+        "maxComponents": {
+          "authority": 30,
+          "diversity": 20,
+          "citationCoverage": 25,
+          "corroboration": 15,
+          "balance": 10
+        }
+      }
     },
     {
       "id": "lasantha-journalists",
@@ -215,9 +661,33 @@
       ],
       "stillContested": "Who ordered the killings and abductions, why investigations collapse when certain figures return to power, and whether justice is now politically impossible.",
       "sources": [
-        { "label": "Wikipedia: Lasantha Wickrematunge", "url": "https://en.wikipedia.org/wiki/Lasantha_Wickrematunge" },
-        { "label": "Wikipedia: Prageeth Eknaligoda", "url": "https://en.wikipedia.org/wiki/Prageeth_Eknaligoda" }
-      ]
+        {
+          "label": "Wikipedia: Lasantha Wickrematunge",
+          "url": "https://en.wikipedia.org/wiki/Lasantha_Wickrematunge"
+        },
+        {
+          "label": "Wikipedia: Prageeth Eknaligoda",
+          "url": "https://en.wikipedia.org/wiki/Prageeth_Eknaligoda"
+        }
+      ],
+      "evidence": {
+        "score": 25,
+        "grade": "F",
+        "components": {
+          "authority": 13.5,
+          "diversity": 3.3,
+          "citationCoverage": 0.0,
+          "corroboration": 0.0,
+          "balance": 8.0
+        },
+        "maxComponents": {
+          "authority": 30,
+          "diversity": 20,
+          "citationCoverage": 25,
+          "corroboration": 15,
+          "balance": 10
+        }
+      }
     },
     {
       "id": "enforced-disappearances",
@@ -239,9 +709,33 @@
       ],
       "stillContested": "What happened to those who surrendered at the war's end, the true number of the missing, and whether the OMP can deliver answers or functions mainly to manage international pressure.",
       "sources": [
-        { "label": "Wikipedia: Enforced disappearances in Sri Lanka", "url": "https://en.wikipedia.org/wiki/Enforced_disappearance" },
-        { "label": "OHCHR: Sri Lanka", "url": "https://www.ohchr.org/en/countries/sri-lanka" }
-      ]
+        {
+          "label": "Wikipedia: Enforced disappearances in Sri Lanka",
+          "url": "https://en.wikipedia.org/wiki/Enforced_disappearance"
+        },
+        {
+          "label": "OHCHR: Sri Lanka",
+          "url": "https://www.ohchr.org/en/countries/sri-lanka"
+        }
+      ],
+      "evidence": {
+        "score": 39,
+        "grade": "D",
+        "components": {
+          "authority": 24.3,
+          "diversity": 6.7,
+          "citationCoverage": 0.0,
+          "corroboration": 0.0,
+          "balance": 8.0
+        },
+        "maxComponents": {
+          "authority": 30,
+          "diversity": 20,
+          "citationCoverage": 25,
+          "corroboration": 15,
+          "balance": 10
+        }
+      }
     },
     {
       "id": "13th-amendment-indo-lanka",
@@ -263,9 +757,33 @@
       ],
       "stillContested": "Whether devolution is the solution or a threat, why provincial council elections keep being postponed, and the role of Indian strategic interest in the arrangement.",
       "sources": [
-        { "label": "Wikipedia: Thirteenth Amendment to the Constitution of Sri Lanka", "url": "https://en.wikipedia.org/wiki/Thirteenth_Amendment_to_the_Constitution_of_Sri_Lanka" },
-        { "label": "Wikipedia: Indo-Sri Lanka Accord", "url": "https://en.wikipedia.org/wiki/Indo-Sri_Lanka_Accord" }
-      ]
+        {
+          "label": "Wikipedia: Thirteenth Amendment to the Constitution of Sri Lanka",
+          "url": "https://en.wikipedia.org/wiki/Thirteenth_Amendment_to_the_Constitution_of_Sri_Lanka"
+        },
+        {
+          "label": "Wikipedia: Indo-Sri Lanka Accord",
+          "url": "https://en.wikipedia.org/wiki/Indo-Sri_Lanka_Accord"
+        }
+      ],
+      "evidence": {
+        "score": 25,
+        "grade": "F",
+        "components": {
+          "authority": 13.5,
+          "diversity": 3.3,
+          "citationCoverage": 0.0,
+          "corroboration": 0.0,
+          "balance": 8.0
+        },
+        "maxComponents": {
+          "authority": 30,
+          "diversity": 20,
+          "citationCoverage": 25,
+          "corroboration": 15,
+          "balance": 10
+        }
+      }
     },
     {
       "id": "constitutional-crisis-2018",
@@ -287,8 +805,29 @@
       ],
       "stillContested": "How close the country came to a lasting breakdown, the motives behind Sirisena's gamble, and whether the precedent weakened constitutional norms.",
       "sources": [
-        { "label": "Wikipedia: 2018 Sri Lankan constitutional crisis", "url": "https://en.wikipedia.org/wiki/2018_Sri_Lankan_constitutional_crisis" }
-      ]
+        {
+          "label": "Wikipedia: 2018 Sri Lankan constitutional crisis",
+          "url": "https://en.wikipedia.org/wiki/2018_Sri_Lankan_constitutional_crisis"
+        }
+      ],
+      "evidence": {
+        "score": 25,
+        "grade": "F",
+        "components": {
+          "authority": 13.5,
+          "diversity": 3.3,
+          "citationCoverage": 0.0,
+          "corroboration": 0.0,
+          "balance": 8.0
+        },
+        "maxComponents": {
+          "authority": 30,
+          "diversity": 20,
+          "citationCoverage": 25,
+          "corroboration": 15,
+          "balance": 10
+        }
+      }
     },
     {
       "id": "hambantota-china-debt",
@@ -310,9 +849,33 @@
       ],
       "stillContested": "Whether 'debt-trap diplomacy' is an accurate description or a geopolitical narrative, who really drove the country into unsustainable debt, and the strategic implications of the lease.",
       "sources": [
-        { "label": "Wikipedia: Hambantota International Port", "url": "https://en.wikipedia.org/wiki/Hambantota_International_Port" },
-        { "label": "Wikipedia: Debt-trap diplomacy", "url": "https://en.wikipedia.org/wiki/Debt-trap_diplomacy" }
-      ]
+        {
+          "label": "Wikipedia: Hambantota International Port",
+          "url": "https://en.wikipedia.org/wiki/Hambantota_International_Port"
+        },
+        {
+          "label": "Wikipedia: Debt-trap diplomacy",
+          "url": "https://en.wikipedia.org/wiki/Debt-trap_diplomacy"
+        }
+      ],
+      "evidence": {
+        "score": 25,
+        "grade": "F",
+        "components": {
+          "authority": 13.5,
+          "diversity": 3.3,
+          "citationCoverage": 0.0,
+          "corroboration": 0.0,
+          "balance": 8.0
+        },
+        "maxComponents": {
+          "authority": 30,
+          "diversity": 20,
+          "citationCoverage": 25,
+          "corroboration": 15,
+          "balance": 10
+        }
+      }
     },
     {
       "id": "pta-detention",
@@ -334,9 +897,33 @@
       ],
       "stillContested": "Why a 'temporary' 1979 law endures, how many remain detained under it, and whether reform is genuine or cosmetic to satisfy trade partners.",
       "sources": [
-        { "label": "Wikipedia: Prevention of Terrorism Act (Sri Lanka)", "url": "https://en.wikipedia.org/wiki/Prevention_of_Terrorism_Act_(Sri_Lanka)" },
-        { "label": "Amnesty International: Sri Lanka", "url": "https://www.amnesty.org/en/location/asia-and-the-pacific/south-asia/sri-lanka/" }
-      ]
+        {
+          "label": "Wikipedia: Prevention of Terrorism Act (Sri Lanka)",
+          "url": "https://en.wikipedia.org/wiki/Prevention_of_Terrorism_Act_(Sri_Lanka)"
+        },
+        {
+          "label": "Amnesty International: Sri Lanka",
+          "url": "https://www.amnesty.org/en/location/asia-and-the-pacific/south-asia/sri-lanka/"
+        }
+      ],
+      "evidence": {
+        "score": 34,
+        "grade": "F",
+        "components": {
+          "authority": 19.5,
+          "diversity": 6.7,
+          "citationCoverage": 0.0,
+          "corroboration": 0.0,
+          "balance": 8.0
+        },
+        "maxComponents": {
+          "authority": 30,
+          "diversity": 20,
+          "citationCoverage": 25,
+          "corroboration": 15,
+          "balance": 10
+        }
+      }
     },
     {
       "id": "executive-presidency",
@@ -358,9 +945,33 @@
       ],
       "stillContested": "Whether the system can ever be reformed by those it benefits, and how much it is responsible for governance failures and the 2022 collapse.",
       "sources": [
-        { "label": "Wikipedia: Executive President of Sri Lanka", "url": "https://en.wikipedia.org/wiki/President_of_Sri_Lanka" },
-        { "label": "Wikipedia: Nineteenth Amendment to the Constitution of Sri Lanka", "url": "https://en.wikipedia.org/wiki/Nineteenth_Amendment_to_the_Constitution_of_Sri_Lanka" }
-      ]
+        {
+          "label": "Wikipedia: Executive President of Sri Lanka",
+          "url": "https://en.wikipedia.org/wiki/President_of_Sri_Lanka"
+        },
+        {
+          "label": "Wikipedia: Nineteenth Amendment to the Constitution of Sri Lanka",
+          "url": "https://en.wikipedia.org/wiki/Nineteenth_Amendment_to_the_Constitution_of_Sri_Lanka"
+        }
+      ],
+      "evidence": {
+        "score": 25,
+        "grade": "F",
+        "components": {
+          "authority": 13.5,
+          "diversity": 3.3,
+          "citationCoverage": 0.0,
+          "corroboration": 0.0,
+          "balance": 8.0
+        },
+        "maxComponents": {
+          "authority": 30,
+          "diversity": 20,
+          "citationCoverage": 25,
+          "corroboration": 15,
+          "balance": 10
+        }
+      }
     }
   ]
 }

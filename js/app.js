@@ -61,6 +61,14 @@
     return n + " " + word + (n === 1 ? "" : "s");
   }
 
+  // Claims may be plain strings (legacy) or {text, sourceIds, perspective|evidence}.
+  function claimText(c) { return typeof c === "string" ? c : (c.text || ""); }
+  function claimSourceIds(c) { return typeof c === "string" ? [] : (c.sourceIds || []); }
+  function claimTag(c) { return typeof c === "string" ? "" : (c.perspective || c.evidence || ""); }
+  function gradeClass(g) {
+    return "ev-" + (("AB".indexOf(g) > -1) ? "good" : ("CD".indexOf(g) > -1) ? "mid" : "low");
+  }
+
   /* ---------- data load ---------- */
   function load() {
     fetch(DATA_URL)
@@ -117,8 +125,9 @@
       if (!q) return true;
       var hay = [
         t.title, t.summary, t.era, t.mainstreamAccount, t.stillContested,
-        (t.competingNarratives || []).join(" "),
-        (t.documentedFacts || []).join(" "),
+        (t.actors || []).join(" "),
+        (t.competingNarratives || []).map(claimText).join(" "),
+        (t.documentedFacts || []).map(claimText).join(" "),
         (t.sources || []).map(function (s) { return s.label; }).join(" "),
       ].join(" ").toLowerCase();
       return hay.indexOf(q) !== -1;
@@ -187,6 +196,9 @@
           '<span class="meter-label">Controversy</span>' +
           '<span class="meter-bar"><span class="meter-fill" style="width:' + pct + '%"></span></span>' +
           '<span class="meter-score">' + t.controversyScore + "/10</span>" +
+          (t.evidence ? '<span class="ev-pill ' + gradeClass(t.evidence.grade) +
+            '" title="Evidence Strength: how well-sourced this entry is">' +
+            "Evidence " + esc(t.evidence.grade) + "</span>" : "") +
         "</div>" +
       "</article>"
     );
@@ -199,6 +211,13 @@
 
     state.lastFocused = trigger || document.activeElement;
 
+    // Number the sources so claims can cite them [1], [2], … and link straight out.
+    var srcMap = {};
+    (t.sources || []).forEach(function (s, i) {
+      if (s.id) srcMap[s.id] = { n: i + 1, url: s.url, label: s.label };
+    });
+
+    var ev = t.evidence;
     var html =
       (t.featured ? '<span class="featured-badge modal-badge">★ Priority topic</span>' : "") +
       '<h2 id="modal-title">' + esc(t.title) + "</h2>" +
@@ -206,15 +225,24 @@
         '<span class="card-cat" style="background:' + catColor(t.category) + '">' + esc(catLabel(t.category)) + "</span>" +
         "<span>" + esc(t.era) + "</span>" +
         '<span class="meter-score">Controversy ' + t.controversyScore + "/10</span>" +
+        (ev ? '<span class="ev-pill ' + gradeClass(ev.grade) + '">Evidence ' + esc(ev.grade) + " (" + ev.score + ")</span>" : "") +
       "</div>" +
       block("Summary", "<p>" + esc(t.summary) + "</p>") +
       block("The mainstream account", "<p>" + esc(t.mainstreamAccount) + "</p>") +
-      block("Competing narratives", listHTML(t.competingNarratives)) +
-      block("Documented facts", listHTML(t.documentedFacts)) +
+      block("Competing narratives", claimsHTML(t.competingNarratives, srcMap)) +
+      block("Documented facts", claimsHTML(t.documentedFacts, srcMap)) +
       block("What remains contested / under-reported", "<p>" + esc(t.stillContested) + "</p>", true) +
-      block("Sources", sourcesHTML(t.sources));
+      (t.actors && t.actors.length ? block("Key actors", actorsHTML(t.actors)) : "") +
+      (t.relatedTopics && t.relatedTopics.length ? block("Related cases", relatedHTML(t.relatedTopics)) : "") +
+      block("Sources", sourcesHTML(t.sources)) +
+      (ev ? evidenceHTML(ev) : "");
 
     el.modalContent.innerHTML = html;
+    // Related-case buttons navigate to that topic (deep-links via the hash).
+    Array.prototype.forEach.call(el.modalContent.querySelectorAll(".related-link"), function (b) {
+      b.addEventListener("click", function () { openTopic(b.getAttribute("data-id"), b); });
+    });
+
     el.backdrop.hidden = false;
     document.body.style.overflow = "hidden";
     el.modal.scrollTop = 0;
@@ -229,18 +257,80 @@
       "<h4>" + esc(title) + "</h4>" + inner + "</div>"
     );
   }
-  function listHTML(arr) {
+
+  function claimsHTML(arr, srcMap) {
     if (!arr || !arr.length) return "<p>—</p>";
-    return "<ul>" + arr.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>";
+    return "<ul class=\"claims\">" + arr.map(function (c) {
+      var tag = claimTag(c);
+      var cites = claimSourceIds(c).map(function (id) {
+        var s = srcMap[id];
+        if (!s) return "";
+        return '<a class="cite" href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer" ' +
+          'title="' + esc(s.label) + '">[' + s.n + "]</a>";
+      }).join("");
+      return "<li>" +
+        (tag ? '<span class="claim-tag">' + esc(tag) + "</span> " : "") +
+        esc(claimText(c)) +
+        (cites ? ' <sup class="cites">' + cites + "</sup>" : "") +
+        "</li>";
+    }).join("") + "</ul>";
   }
+
+  function actorsHTML(actors) {
+    return '<div class="actor-chips">' +
+      actors.map(function (a) { return '<span class="actor-chip">' + esc(a) + "</span>"; }).join("") +
+      "</div>";
+  }
+
+  function relatedHTML(rels) {
+    var byId = {};
+    state.topics.forEach(function (t) { byId[t.id] = t; });
+    return '<ul class="related-list">' + rels.map(function (r) {
+      var target = byId[r.id];
+      if (!target) return "";
+      return '<li><button type="button" class="related-link" data-id="' + esc(r.id) + '">' +
+        '<span class="rel-tag">' + esc(r.relation || "related") + "</span>" +
+        '<span class="rel-title">' + esc(target.title) + "</span>" +
+        (r.note ? '<span class="rel-note">' + esc(r.note) + "</span>" : "") +
+        "</button></li>";
+    }).join("") + "</ul>";
+  }
+
+  function evidenceHTML(ev) {
+    var order = ["authority", "diversity", "citationCoverage", "corroboration", "balance"];
+    var labels = {
+      authority: "Source authority", diversity: "Source diversity",
+      citationCoverage: "Citation coverage", corroboration: "Corroboration", balance: "Balance",
+    };
+    var rows = order.map(function (k) {
+      var got = ev.components[k], max = ev.maxComponents[k];
+      var pct = max ? Math.round((got / max) * 100) : 0;
+      return '<div class="ev-row">' +
+        '<span class="ev-name">' + labels[k] + "</span>" +
+        '<span class="ev-track"><span class="ev-bar" style="width:' + pct + '%"></span></span>' +
+        '<span class="ev-num">' + got + "/" + max + "</span></div>";
+    }).join("");
+    return '<details class="evidence-block"><summary>' +
+      '<span class="ev-pill ' + gradeClass(ev.grade) + '">Evidence ' + esc(ev.grade) + " (" + ev.score + "/100)</span>" +
+      " &mdash; how this score is built" +
+      "</summary>" + rows +
+      '<p class="ev-disclaimer">Measures how well-sourced <em>this entry</em> is — its sourcing, ' +
+      "diversity and corroboration — <strong>not</strong> whether the claims are true. " +
+      "Computed deterministically from the data; run <code>cli.py score</code> to reproduce.</p>" +
+      "</details>";
+  }
+
   function sourcesHTML(arr) {
     if (!arr || !arr.length) return "<p>—</p>";
     return (
-      '<ul class="sources-list">' +
+      '<ol class="sources-list">' +
       arr.map(function (s) {
-        return '<li><a href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer">' + esc(s.label) + "</a></li>";
+        var meta = [s.type, s.publisher, s.date].filter(Boolean).join(" · ");
+        return '<li><a href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer">' +
+          esc(s.label) + "</a>" +
+          (meta ? '<span class="src-meta">' + esc(meta) + "</span>" : "") + "</li>";
       }).join("") +
-      "</ul>"
+      "</ol>"
     );
   }
 

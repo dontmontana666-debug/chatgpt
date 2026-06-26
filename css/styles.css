@@ -203,19 +203,75 @@ html, body {
 .section-block ul { margin: 0; padding-left: 1.2rem; }
 .section-block li { margin-bottom: 0.4rem; }
 
-.sources-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.sources-list { margin: 0; padding-left: 1.4rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.sources-list li { padding-left: 0.2rem; }
 .sources-list a {
-  display: block;
   color: var(--accent-2);
   text-decoration: none;
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  padding: 0.6rem 0.8rem;
-  border-radius: 8px;
   word-break: break-word;
 }
-.sources-list a:hover { border-color: var(--accent-2); }
-.sources-list a::before { content: "🔗 "; }
+.sources-list a:hover { text-decoration: underline; }
+.src-meta { display: block; color: var(--text-dim); font-size: 0.78rem; margin-top: 0.1rem; }
+
+/* Evidence Strength */
+.ev-pill {
+  font-size: 0.72rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 999px;
+  border: 1px solid transparent; white-space: nowrap;
+}
+.ev-good { color: #3fb950; background: rgba(63, 185, 80, 0.12); border-color: rgba(63, 185, 80, 0.4); }
+.ev-mid  { color: var(--accent); background: rgba(245, 197, 24, 0.12); border-color: rgba(245, 197, 24, 0.4); }
+.ev-low  { color: var(--danger); background: rgba(248, 81, 73, 0.12); border-color: rgba(248, 81, 73, 0.4); }
+
+.evidence-block {
+  margin-top: 1.6rem; border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 0.8rem 1rem; background: var(--bg-soft);
+}
+.evidence-block summary { cursor: pointer; color: var(--text-dim); font-size: 0.9rem; }
+.evidence-block summary .ev-pill { margin-right: 0.3rem; }
+.ev-row { display: flex; align-items: center; gap: 0.6rem; margin: 0.5rem 0; font-size: 0.82rem; }
+.ev-name { flex: 0 0 9.5rem; color: var(--text-dim); }
+.ev-track { flex: 1; height: 6px; background: var(--bg-card); border-radius: 999px; overflow: hidden; }
+.ev-bar { display: block; height: 100%; background: linear-gradient(90deg, #58a6ff, #3fb950); }
+.ev-num { flex: 0 0 3.2rem; text-align: right; color: var(--text-dim); }
+.ev-disclaimer { font-size: 0.78rem; color: var(--text-dim); margin: 0.7rem 0 0; line-height: 1.5; }
+.ev-disclaimer code { background: var(--bg-card); padding: 0.05rem 0.3rem; border-radius: 4px; }
+
+/* Cited claims */
+.claims { margin: 0; padding-left: 1.2rem; }
+.claims li { margin-bottom: 0.55rem; }
+.claim-tag {
+  font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.03em; font-weight: 700;
+  color: var(--accent-2); background: rgba(88, 166, 255, 0.1);
+  padding: 0.05rem 0.4rem; border-radius: 5px; margin-right: 0.15rem;
+}
+.cites { margin-left: 0.15rem; }
+.cite {
+  color: var(--accent-2); text-decoration: none; font-size: 0.72rem; font-weight: 700;
+}
+.cite:hover { text-decoration: underline; }
+
+/* Actors */
+.actor-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.actor-chip {
+  font-size: 0.8rem; color: var(--text); background: var(--bg-soft);
+  border: 1px solid var(--border); padding: 0.2rem 0.6rem; border-radius: 999px;
+}
+
+/* Related cases */
+.related-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.related-link {
+  width: 100%; text-align: left; cursor: pointer;
+  background: var(--bg-soft); border: 1px solid var(--border); border-radius: 8px;
+  padding: 0.6rem 0.8rem; color: var(--text); display: flex; flex-direction: column; gap: 0.2rem;
+}
+.related-link:hover { border-color: var(--accent-2); }
+.rel-tag {
+  align-self: flex-start; font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.04em;
+  font-weight: 700; color: var(--accent); background: rgba(245, 197, 24, 0.1);
+  padding: 0.1rem 0.45rem; border-radius: 5px;
+}
+.rel-title { font-weight: 600; }
+.rel-note { font-size: 0.82rem; color: var(--text-dim); }
 
 /* Footer */
 .site-footer {

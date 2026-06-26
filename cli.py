@@ -12,9 +12,11 @@ Usage:
     python3 cli.py categories                # list category ids
     python3 cli.py random                    # surface a random controversy
     python3 cli.py validate                  # sanity-check the data file
+    python3 cli.py score [id]                 # Evidence Strength score + breakdown
+    python3 cli.py rescore                    # bake evidence scores into the data file
     python3 cli.py linkcheck                  # verify every source URL resolves
 
-Add --json to `list`/`search`/`show`/`linkcheck` for machine-readable output.
+Add --json to `list`/`search`/`show`/`score`/`linkcheck` for machine-readable output.
 """
 import argparse
 import concurrent.futures
@@ -27,6 +29,8 @@ import sys
 import textwrap
 import urllib.error
 import urllib.request
+
+import scoring
 
 # Exit quietly when output is piped to a closing reader (e.g. `| head`).
 try:
@@ -72,6 +76,13 @@ def meter(score):
     return color(bar) + f" {score}/10"
 
 
+def grade_badge(ev):
+    """Colourised 'Evidence: A (87)' tag."""
+    g = ev["grade"]
+    color = green if g in ("A", "B") else (yellow if g in ("C", "D") else red)
+    return color(f"Evidence {g} ({ev['score']})")
+
+
 def find_topic(data, key):
     key_l = key.lower()
     topics = data["topics"]
@@ -106,8 +117,9 @@ def _sorted_topics(data, args):
         q = args.query.lower()
         def hay(t):
             parts = [t["title"], t["summary"], t["era"], t.get("stillContested", ""),
-                     " ".join(t.get("competingNarratives", [])),
-                     " ".join(t.get("documentedFacts", []))]
+                     " ".join(t.get("actors", [])),
+                     " ".join(scoring.claim_text(c) for c in t.get("competingNarratives", [])),
+                     " ".join(scoring.claim_text(c) for c in t.get("documentedFacts", []))]
             return " ".join(parts).lower()
         topics = [t for t in topics if q in hay(t)]
     # Featured (priority) topics are pinned to the top, then ranked by controversy.
@@ -121,7 +133,8 @@ def _print_list(data, topics):
         return
     for t in topics:
         star = yellow("★ PRIORITY  ") if t.get("featured") else ""
-        print(f"{meter(t['controversyScore'])}  {star}{bold(t['title'])}")
+        ev = t.get("evidence") or scoring.evidence_score(t)
+        print(f"{meter(t['controversyScore'])}  {grade_badge(ev)}  {star}{bold(t['title'])}")
         print(f"  {cyan(t['id'])}  ·  {dim(cat_label(data, t['category']))}  ·  {dim(t['era'])}")
         print(textwrap.fill(t["summary"], width=88, initial_indent="  ", subsequent_indent="  "))
         print()
@@ -151,11 +164,16 @@ def _wrap(label, text, color=cyan):
     print()
 
 
-def _wrap_items(label, items, color=cyan, bullet="•"):
+def _wrap_claims(label, claims, src_index, color=cyan, bullet="•"):
+    """Render claims (str or {text,sourceIds,perspective/evidence}) with [n] cites."""
     print(color(bold(label)))
-    for it in items:
-        print(textwrap.fill(it, width=90, initial_indent=f"  {bullet} ",
-                            subsequent_indent="    "))
+    for c in claims:
+        text = scoring.claim_text(c)
+        cites = "".join(f"[{src_index[i]}]" for i in scoring.claim_source_ids(c) if i in src_index)
+        tag = scoring.claim_perspective(c) or scoring.claim_evidence(c)
+        prefix = dim(f"({tag}) ") if tag else ""
+        body = prefix + text + (" " + dim(cites) if cites else "")
+        print(textwrap.fill(body, width=90, initial_indent=f"  {bullet} ", subsequent_indent="    "))
     print()
 
 
@@ -167,20 +185,44 @@ def cmd_show(data, args):
         print(json.dumps(t, indent=2, ensure_ascii=False))
         return
 
+    # Number the sources so claims can cite them as [1], [2], …
+    src_index = {s["id"]: n for n, s in enumerate(t.get("sources", []), 1) if "id" in s}
+    ev = t.get("evidence") or scoring.evidence_score(t)
+
     print("=" * 92)
     if t.get("featured"):
         print(yellow("★ PRIORITY TOPIC"))
     print(bold(t["title"]))
-    print(f"{dim(cat_label(data, t['category']))}  ·  {dim(t['era'])}  ·  {meter(t['controversyScore'])}")
+    print(f"{dim(cat_label(data, t['category']))}  ·  {dim(t['era'])}  ·  "
+          f"{meter(t['controversyScore'])}  ·  {grade_badge(ev)}")
     print("=" * 92 + "\n")
     _wrap("SUMMARY", t["summary"])
     _wrap("THE MAINSTREAM ACCOUNT", t["mainstreamAccount"])
-    _wrap_items("COMPETING NARRATIVES", t.get("competingNarratives", []), yellow)
-    _wrap_items("DOCUMENTED FACTS", t.get("documentedFacts", []), cyan)
+    _wrap_claims("COMPETING NARRATIVES", t.get("competingNarratives", []), src_index, yellow)
+    _wrap_claims("DOCUMENTED FACTS", t.get("documentedFacts", []), src_index, cyan)
     _wrap("WHAT REMAINS CONTESTED / UNDER-REPORTED", t["stillContested"], red)
+
+    if t.get("actors"):
+        print(cyan(bold("KEY ACTORS")))
+        print(textwrap.fill(" · ".join(t["actors"]), width=90,
+                            initial_indent="  ", subsequent_indent="  "))
+        print()
+
+    if t.get("relatedTopics"):
+        print(cyan(bold("RELATED CASES")))
+        by_id = {x["id"]: x for x in data["topics"]}
+        for rel in t["relatedTopics"]:
+            title = by_id.get(rel["id"], {}).get("title", rel["id"])
+            note = f" — {rel['note']}" if rel.get("note") else ""
+            print(f"  • [{yellow(rel.get('relation', 'related'))}] {title}{dim(note)}")
+            print(f"    {dim(rel['id'])}")
+        print()
+
     print(cyan(bold("SOURCES")))
-    for s in t.get("sources", []):
-        print(f"  • {s['label']}\n    {dim(s['url'])}")
+    for n, s in enumerate(t.get("sources", []), 1):
+        meta = " · ".join(x for x in [s.get("type"), s.get("publisher"), s.get("date")] if x)
+        meta = dim(f"  [{meta}]") if meta else ""
+        print(f"  {n}. {s['label']}{meta}\n     {dim(s['url'])}")
     print()
 
 
@@ -190,12 +232,17 @@ def cmd_random(data, _args):
     cmd_show(data, args)
 
 
+_RELATION_VOCAB = {"caused-by", "led-to", "part-of", "same-actors", "same-era",
+                   "accountability-for", "context-for", "contradicts"}
+
+
 def cmd_validate(data, _args):
     errors = []
     required = ["id", "title", "category", "era", "controversyScore", "summary",
                 "mainstreamAccount", "competingNarratives", "documentedFacts",
                 "stillContested", "sources"]
     cat_ids = {c["id"] for c in data.get("categories", [])}
+    all_ids = {t.get("id") for t in data["topics"]}
     seen = set()
     for i, t in enumerate(data["topics"]):
         ctx = t.get("id", f"#{i}")
@@ -211,9 +258,40 @@ def cmd_validate(data, _args):
             errors.append(f"{ctx}: controversyScore must be 0–10")
         if "featured" in t and not isinstance(t["featured"], bool):
             errors.append(f"{ctx}: 'featured' must be true/false")
+
+        # Sources: collect ids, validate URL + type vocabulary.
+        src_ids = set()
         for s in t.get("sources", []):
             if not str(s.get("url", "")).startswith("http"):
                 errors.append(f"{ctx}: source '{s.get('label')}' has no valid URL")
+            if "id" in s:
+                if s["id"] in src_ids:
+                    errors.append(f"{ctx}: duplicate source id '{s['id']}'")
+                src_ids.add(s["id"])
+            if s.get("type") and s["type"] not in scoring.TIERS:
+                errors.append(f"{ctx}: source '{s.get('id', s.get('label'))}' has unknown type '{s['type']}'")
+
+        # Claims: enriched objects must have text and resolvable sourceIds.
+        for field in ("competingNarratives", "documentedFacts"):
+            for c in t.get(field, []):
+                if isinstance(c, dict):
+                    if not c.get("text"):
+                        errors.append(f"{ctx}: a {field} entry has empty 'text'")
+                    for sid in c.get("sourceIds", []):
+                        if sid not in src_ids:
+                            errors.append(f"{ctx}: {field} cites unknown sourceId '{sid}'")
+
+        # Relations: ids must exist; relation must be in the vocabulary.
+        for rel in t.get("relatedTopics", []):
+            if rel.get("id") not in all_ids:
+                errors.append(f"{ctx}: relatedTopic points at unknown id '{rel.get('id')}'")
+            if rel.get("id") == t.get("id"):
+                errors.append(f"{ctx}: relatedTopic points at itself")
+            if rel.get("relation") and rel["relation"] not in _RELATION_VOCAB:
+                errors.append(f"{ctx}: unknown relation '{rel['relation']}'")
+
+        if "actors" in t and not all(isinstance(a, str) for a in t["actors"]):
+            errors.append(f"{ctx}: 'actors' must be a list of strings")
 
     if errors:
         print(red(f"✗ {len(errors)} issue(s) found:"))
@@ -339,6 +417,62 @@ def cmd_linkcheck(data, args):
         sys.exit(1)
 
 
+def cmd_score(data, args):
+    target = getattr(args, "id", None)
+    if target:
+        t = find_topic(data, target)
+        if not t:
+            sys.exit(1)
+        rows = [(t, scoring.evidence_score(t))]
+    else:
+        rows = [(t, scoring.evidence_score(t)) for t in data["topics"]]
+
+    if args.json:
+        print(json.dumps([dict(id=t["id"], **ev) for t, ev in rows], indent=2, ensure_ascii=False))
+        return
+
+    if len(rows) == 1:
+        t, ev = rows[0]
+        note = "enriched — claims individually cited" if ev["enriched"] \
+            else "legacy — claims not yet individually cited"
+        print(bold(t["title"]))
+        print(f"{grade_badge(ev)}   {dim('(' + note + ')')}\n")
+        for k in ("authority", "diversity", "citationCoverage", "corroboration", "balance"):
+            got, mx = ev["components"][k], ev["maxComponents"][k]
+            filled = round(24 * (got / mx)) if mx else 0
+            bar = "█" * filled + "░" * (24 - filled)
+            print(f"  {k:<17} {bar} {got:>4}/{mx}")
+        print(f"\n  {'TOTAL':<17} {' ' * 24} {bold(str(ev['score']))}/100  →  grade {bold(ev['grade'])}")
+        print(dim("\nEvidence Strength measures how well-sourced THIS entry is — not whether "
+                  "its claims are true."))
+    else:
+        rows.sort(key=lambda r: r[1]["score"], reverse=True)
+        for t, ev in rows:
+            g = ev["grade"]
+            color = green if g in ("A", "B") else (yellow if g in ("C", "D") else red)
+            print(f"  {color(g)}  {ev['score']:>3}/100  {t['title']}")
+        dist = {}
+        for _, ev in rows:
+            dist[ev["grade"]] = dist.get(ev["grade"], 0) + 1
+        print(dim("\n" + "  ".join(f"{g}:{dist.get(g, 0)}" for g in "ABCDF")))
+
+
+def cmd_rescore(data, _args):
+    for t in data["topics"]:
+        ev = scoring.evidence_score(t)
+        t["evidence"] = {"score": ev["score"], "grade": ev["grade"],
+                         "components": ev["components"], "maxComponents": ev["maxComponents"]}
+    with open(DATA_PATH, "w", encoding="utf-8") as fh:
+        json.dump(data, fh, ensure_ascii=False, indent=2)
+        fh.write("\n")
+    grades = {}
+    for t in data["topics"]:
+        g = t["evidence"]["grade"]
+        grades[g] = grades.get(g, 0) + 1
+    print(f"✓ Rescored {len(data['topics'])} topics into {os.path.basename(DATA_PATH)}  "
+          + dim("(" + "  ".join(f"{g}:{grades.get(g, 0)}" for g in 'ABCDF') + ")"))
+
+
 def main():
     p = argparse.ArgumentParser(
         description="Explore the Sri Lankan Politics Controversy Archive.",
@@ -364,6 +498,12 @@ def main():
     sub.add_parser("random", help="show a random controversy")
     sub.add_parser("validate", help="validate the data file")
 
+    psc = sub.add_parser("score", help="show Evidence Strength score + breakdown")
+    psc.add_argument("id", nargs="?", help="topic id/title; omit for the whole archive")
+    psc.add_argument("--json", action="store_true")
+
+    sub.add_parser("rescore", help="recompute Evidence scores and bake them into the data file")
+
     plc = sub.add_parser("linkcheck", help="ping every source URL and report broken links")
     plc.add_argument("--timeout", type=int, default=15, help="per-request timeout in seconds")
     plc.add_argument("--workers", type=int, default=8, help="concurrent requests")
@@ -375,7 +515,8 @@ def main():
     dispatch = {
         "list": cmd_list, "search": cmd_search, "show": cmd_show,
         "categories": cmd_categories, "random": cmd_random,
-        "validate": cmd_validate, "linkcheck": cmd_linkcheck,
+        "validate": cmd_validate, "score": cmd_score, "rescore": cmd_rescore,
+        "linkcheck": cmd_linkcheck,
     }
     if not args.cmd:
         # Default: a friendly overview
