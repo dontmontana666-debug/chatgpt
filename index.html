@@ -36,10 +36,19 @@
           </select>
         </div>
       </div>
-      <p class="result-count" id="result-count"></p>
+      <div class="view-row">
+        <div class="view-toggle" id="view-toggle" role="group" aria-label="View mode">
+          <button class="vbtn active" data-view="cards" aria-pressed="true">▦ Cards</button>
+          <button class="vbtn" data-view="graph" aria-pressed="false">◍ Graph</button>
+          <button class="vbtn" data-view="timeline" aria-pressed="false">▤ Timeline</button>
+        </div>
+        <p class="result-count" id="result-count"></p>
+      </div>
     </section>
 
     <section class="grid" id="topic-grid" aria-live="polite"></section>
+    <div class="graph-wrap" id="graph-view" hidden></div>
+    <div class="timeline-wrap" id="timeline-view" hidden></div>
     <p class="empty" id="empty-state" hidden></p>
   </main>
 

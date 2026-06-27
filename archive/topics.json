@@ -4,7 +4,7 @@
     "description": "A curated, source-linked archive of the most contested episodes in modern Sri Lankan politics. Each entry presents the mainstream account, the competing narratives, the documented facts, and what remains unresolved or under-reported.",
     "disclaimer": "This archive is an educational research aid. 'Hidden truth' here means the contested, disputed, or under-reported dimensions of each episode — not conspiracy. Entries deliberately present multiple viewpoints. Sources are starting points for your own verification; always read them critically and consult primary documents where possible.",
     "lastUpdated": "2026-06-26",
-    "version": "1.2.0"
+    "version": "1.3.0"
   },
   "categories": [
     {
@@ -257,35 +257,118 @@
       "summary": "Over several days in July 1983, organised mobs killed hundreds to thousands of Tamils, destroyed homes and businesses, and triggered mass displacement. The event is widely regarded as the spark that escalated the separatist conflict into full civil war.",
       "mainstreamAccount": "Officially framed at the time as a spontaneous communal reaction to the LTTE's ambush killing of 13 soldiers in Jaffna.",
       "competingNarratives": [
-        "Survivor testimony and later scholarship describe organised mobs using voter registration lists and electoral rolls to target Tamil homes and shops — evidence of premeditation, not spontaneity.",
-        "Allegations persist that elements of the state and ruling party were complicit or passive while violence unfolded.",
-        "The scale of killing is disputed, with estimates from several hundred to 3,000+."
-      ],
-      "documentedFacts": [
-        "Tens of thousands of Tamils fled the country, fuelling the global Tamil diaspora.",
-        "The government's response, including a constitutional amendment banning separatist advocacy, pushed many Tamil youth toward militancy.",
-        "The pogrom is a foundational reference point in Tamil collective memory and in the LTTE's recruitment narrative."
-      ],
-      "stillContested": "The degree of official orchestration or complicity, the precise death toll, and the lack of any meaningful prosecution of perpetrators decades later.",
-      "sources": [
         {
-          "label": "Wikipedia: Black July",
-          "url": "https://en.wikipedia.org/wiki/Black_July"
+          "text": "Survivor testimony and later scholarship describe organised mobs using voter registration lists and electoral rolls to target Tamil homes and shops — evidence of premeditation, not spontaneity.",
+          "perspective": "tamil",
+          "sourceIds": [
+            "bj-wp",
+            "bj-jrj"
+          ]
         },
         {
-          "label": "Wikipedia: Sri Lankan Civil War – origins",
-          "url": "https://en.wikipedia.org/wiki/Sri_Lankan_Civil_War"
+          "text": "Allegations persist that elements of the state and ruling party were complicit or passive while violence unfolded.",
+          "perspective": "critics",
+          "sourceIds": [
+            "bj-wp"
+          ]
+        },
+        {
+          "text": "The scale of killing is disputed, with estimates from several hundred to 3,000+.",
+          "perspective": "contested",
+          "sourceIds": [
+            "bj-wp",
+            "bj-war"
+          ]
+        }
+      ],
+      "documentedFacts": [
+        {
+          "text": "Tens of thousands of Tamils fled the country, fuelling the global Tamil diaspora.",
+          "evidence": "encyclopedia",
+          "sourceIds": [
+            "bj-wp",
+            "bj-war"
+          ]
+        },
+        {
+          "text": "The government's response, including a constitutional amendment banning separatist advocacy, pushed many Tamil youth toward militancy.",
+          "evidence": "official-record",
+          "sourceIds": [
+            "bj-wp",
+            "bj-jrj"
+          ]
+        },
+        {
+          "text": "The pogrom is a foundational reference point in Tamil collective memory and in the LTTE's recruitment narrative.",
+          "evidence": "academic",
+          "sourceIds": [
+            "bj-wp"
+          ]
+        }
+      ],
+      "stillContested": "The degree of official orchestration or complicity, the precise death toll, and the lack of any meaningful prosecution of perpetrators decades later.",
+      "actors": [
+        "Tamil civilians",
+        "Sinhalese mobs",
+        "United National Party (UNP)",
+        "J. R. Jayewardene",
+        "LTTE"
+      ],
+      "relatedTopics": [
+        {
+          "id": "war-final-phase-2009",
+          "relation": "led-to",
+          "note": "the pogrom escalated the conflict into full civil war"
+        },
+        {
+          "id": "jvp-insurrections",
+          "relation": "same-era",
+          "note": "1980s political violence on multiple fronts"
+        },
+        {
+          "id": "13th-amendment-indo-lanka",
+          "relation": "led-to",
+          "note": "the violence pushed India toward the devolution accord"
+        }
+      ],
+      "sources": [
+        {
+          "id": "bj-wp",
+          "label": "Wikipedia: Black July",
+          "url": "https://en.wikipedia.org/wiki/Black_July",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "bj-war",
+          "label": "Wikipedia: Sri Lankan Civil War",
+          "url": "https://en.wikipedia.org/wiki/Sri_Lankan_Civil_War",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "bj-jrj",
+          "label": "Wikipedia: J. R. Jayewardene (president, 1983)",
+          "url": "https://en.wikipedia.org/wiki/J._R._Jayewardene",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "state"
         }
       ],
       "evidence": {
-        "score": 25,
-        "grade": "F",
+        "score": 87,
+        "grade": "A",
         "components": {
-          "authority": 13.5,
-          "diversity": 3.3,
-          "citationCoverage": 0.0,
-          "corroboration": 0.0,
-          "balance": 8.0
+          "authority": 22.2,
+          "diversity": 20.0,
+          "citationCoverage": 25.0,
+          "corroboration": 10.0,
+          "balance": 10.0
         },
         "maxComponents": {
           "authority": 30,
@@ -305,35 +388,131 @@
       "summary": "Two Marxist uprisings led by the Janatha Vimukthi Peramuna (JVP) were crushed by the state. The second, in the late 1980s, was met with a counter-insurgency campaign marked by mass disappearances, extrajudicial killings, and 'death squads'.",
       "mainstreamAccount": "The state framed its response as necessary to defend the elected government against armed insurrection and terror.",
       "competingNarratives": [
-        "Human rights organisations documented tens of thousands of disappearances and bodies dumped or burned — 'tyre pyres' became a symbol of the era.",
-        "Both the JVP and the state carried out atrocities; civilians were caught between them.",
-        "Many perpetrators on the state side were never identified or prosecuted; some later held high office."
-      ],
-      "documentedFacts": [
-        "Estimates of deaths and disappearances in 1987–89 commonly range from 30,000 to 60,000.",
-        "Several presidential commissions of inquiry into disappearances were established in the 1990s.",
-        "The JVP later entered democratic politics and remains an electoral force."
-      ],
-      "stillContested": "The full death toll, the identities of those who ordered killings, and why accountability for state actors has been so limited.",
-      "sources": [
         {
-          "label": "Wikipedia: 1987–1989 JVP insurrection",
-          "url": "https://en.wikipedia.org/wiki/1987%E2%80%931989_JVP_insurrection"
+          "text": "Human rights organisations documented tens of thousands of disappearances and bodies dumped or burned — 'tyre pyres' became a symbol of the era.",
+          "perspective": "international",
+          "sourceIds": [
+            "jvp-hr",
+            "jvp-87"
+          ]
         },
         {
+          "text": "Both the JVP and the state carried out atrocities; civilians were caught between them.",
+          "perspective": "neutral",
+          "sourceIds": [
+            "jvp-87",
+            "jvp-71"
+          ]
+        },
+        {
+          "text": "Many perpetrators on the state side were never identified or prosecuted; some later held high office.",
+          "perspective": "critics",
+          "sourceIds": [
+            "jvp-87",
+            "jvp-hr"
+          ]
+        }
+      ],
+      "documentedFacts": [
+        {
+          "text": "Estimates of deaths and disappearances in 1987–89 commonly range from 30,000 to 60,000.",
+          "evidence": "academic",
+          "sourceIds": [
+            "jvp-87"
+          ]
+        },
+        {
+          "text": "Several presidential commissions of inquiry into disappearances were established in the 1990s.",
+          "evidence": "official-inquiry",
+          "sourceIds": [
+            "jvp-hr"
+          ]
+        },
+        {
+          "text": "The JVP later entered democratic politics and remains an electoral force.",
+          "evidence": "encyclopedia",
+          "sourceIds": [
+            "jvp-rw",
+            "jvp-87"
+          ]
+        }
+      ],
+      "stillContested": "The full death toll, the identities of those who ordered killings, and why accountability for state actors has been so limited.",
+      "actors": [
+        "Janatha Vimukthi Peramuna (JVP)",
+        "Rohana Wijeweera",
+        "Sri Lankan security forces",
+        "Premadasa government"
+      ],
+      "relatedTopics": [
+        {
+          "id": "enforced-disappearances",
+          "relation": "led-to",
+          "note": "the counter-insurgency produced mass disappearances"
+        },
+        {
+          "id": "black-july-1983",
+          "relation": "same-era",
+          "note": "concurrent 1980s upheaval"
+        },
+        {
+          "id": "executive-presidency",
+          "relation": "context-for",
+          "note": "emergency powers flowed from the strong presidency"
+        },
+        {
+          "id": "pta-detention",
+          "relation": "context-for",
+          "note": "detention powers were used against suspects"
+        }
+      ],
+      "sources": [
+        {
+          "id": "jvp-87",
+          "label": "Wikipedia: 1987–1989 JVP insurrection",
+          "url": "https://en.wikipedia.org/wiki/1987%E2%80%931989_JVP_insurrection",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "jvp-71",
           "label": "Wikipedia: 1971 JVP insurrection",
-          "url": "https://en.wikipedia.org/wiki/1971_JVP_insurrection"
+          "url": "https://en.wikipedia.org/wiki/1971_JVP_insurrection",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "jvp-rw",
+          "label": "Wikipedia: Rohana Wijeweera (JVP founder)",
+          "url": "https://en.wikipedia.org/wiki/Rohana_Wijeweera",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "jvp-hr",
+          "label": "Wikipedia: Human rights in Sri Lanka",
+          "url": "https://en.wikipedia.org/wiki/Human_rights_in_Sri_Lanka",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "international"
         }
       ],
       "evidence": {
-        "score": 25,
-        "grade": "F",
+        "score": 84,
+        "grade": "A",
         "components": {
-          "authority": 13.5,
-          "diversity": 3.3,
-          "citationCoverage": 0.0,
-          "corroboration": 0.0,
-          "balance": 8.0
+          "authority": 24.0,
+          "diversity": 20.0,
+          "citationCoverage": 25.0,
+          "corroboration": 5.0,
+          "balance": 10.0
         },
         "maxComponents": {
           "authority": 30,
@@ -510,31 +689,117 @@
       "summary": "Irregularities in the issuance of government bonds by the Central Bank of Sri Lanka, involving a primary dealer linked by marriage to the Central Bank Governor, became one of the country's highest-profile financial scandals — striking because it implicated a government elected on an anti-corruption platform.",
       "mainstreamAccount": "Initially framed by some in government as a routine auction; the Governor defended the process.",
       "competingNarratives": [
-        "A bond-trading firm connected to the Governor's son-in-law reaped outsized profits, suggesting insider advantage.",
-        "A Presidential Commission of Inquiry found serious irregularities and losses to the state.",
-        "The scandal split the governing coalition and damaged the reformist 'good governance' (yahapalanaya) brand."
+        {
+          "text": "A bond-trading firm connected to the Governor's son-in-law reaped outsized profits, suggesting insider advantage.",
+          "perspective": "critics",
+          "sourceIds": [
+            "cb-wp",
+            "cb-am"
+          ]
+        },
+        {
+          "text": "A Presidential Commission of Inquiry found serious irregularities and losses to the state.",
+          "perspective": "official",
+          "sourceIds": [
+            "cb-wp"
+          ]
+        },
+        {
+          "text": "The scandal split the governing coalition and damaged the reformist 'good governance' (yahapalanaya) brand.",
+          "perspective": "critics",
+          "sourceIds": [
+            "cb-wp",
+            "cb-rw"
+          ]
+        }
       ],
       "documentedFacts": [
-        "The Central Bank Governor (Arjuna Mahendran) was later wanted in connection with the case.",
-        "Courts convicted at least one principal figure (Arjun Aloysius's firm Perpetual Treasuries was central to proceedings).",
-        "Estimated losses to the state ran into billions of rupees."
+        {
+          "text": "The Central Bank Governor (Arjuna Mahendran) was later wanted in connection with the case.",
+          "evidence": "official-record",
+          "sourceIds": [
+            "cb-am",
+            "cb-wp"
+          ]
+        },
+        {
+          "text": "Courts convicted at least one principal figure (Arjun Aloysius's firm Perpetual Treasuries was central to proceedings).",
+          "evidence": "court-ruling",
+          "sourceIds": [
+            "cb-wp"
+          ]
+        },
+        {
+          "text": "Estimated losses to the state ran into billions of rupees.",
+          "evidence": "official-inquiry",
+          "sourceIds": [
+            "cb-wp"
+          ]
+        }
       ],
       "stillContested": "The full chain of political responsibility, the recovery of losses, and the failure to extradite or convict all key figures.",
+      "actors": [
+        "Arjuna Mahendran",
+        "Arjun Aloysius",
+        "Perpetual Treasuries",
+        "Ranil Wickremesinghe",
+        "Central Bank of Sri Lanka"
+      ],
+      "relatedTopics": [
+        {
+          "id": "constitutional-crisis-2018",
+          "relation": "same-actors",
+          "note": "the same Sirisena–Wickremesinghe government"
+        },
+        {
+          "id": "economic-crisis-2022",
+          "relation": "context-for",
+          "note": "eroded fiscal credibility before the collapse"
+        },
+        {
+          "id": "rajapaksa-dynasty",
+          "relation": "contradicts",
+          "note": "the reformers who ousted the Rajapaksas had their own graft scandal"
+        }
+      ],
       "sources": [
         {
+          "id": "cb-wp",
           "label": "Wikipedia: Central Bank of Sri Lanka bond scandal",
-          "url": "https://en.wikipedia.org/wiki/Central_Bank_of_Sri_Lanka_bond_scandal"
+          "url": "https://en.wikipedia.org/wiki/Central_Bank_of_Sri_Lanka_bond_scandal",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "cb-am",
+          "label": "Wikipedia: Arjuna Mahendran (Central Bank Governor)",
+          "url": "https://en.wikipedia.org/wiki/Arjuna_Mahendran",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "state"
+        },
+        {
+          "id": "cb-rw",
+          "label": "Wikipedia: Ranil Wickremesinghe (PM, yahapalana govt)",
+          "url": "https://en.wikipedia.org/wiki/Ranil_Wickremesinghe",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "state"
         }
       ],
       "evidence": {
-        "score": 25,
-        "grade": "F",
+        "score": 86,
+        "grade": "A",
         "components": {
-          "authority": 13.5,
-          "diversity": 3.3,
-          "citationCoverage": 0.0,
-          "corroboration": 0.0,
-          "balance": 8.0
+          "authority": 26.3,
+          "diversity": 20.0,
+          "citationCoverage": 25.0,
+          "corroboration": 5.0,
+          "balance": 10.0
         },
         "maxComponents": {
           "authority": 30,
@@ -554,35 +819,132 @@
       "summary": "Across multiple presidencies and cabinets, members of the Rajapaksa family held the presidency, premiership, finance, defence and other portfolios simultaneously, prompting accusations of family rule, corruption, and the hollowing-out of institutions.",
       "mainstreamAccount": "Supporters credit Mahinda Rajapaksa with ending the war and delivering infrastructure and stability.",
       "competingNarratives": [
-        "Critics allege the family concentrated state power, controlled a large share of the national budget through their ministries, and presided over opaque, debt-financed megaprojects.",
-        "Allegations of corruption, nepotism, and suppression of dissent recurred across investigations and media reports.",
-        "The 2022 economic collapse crystallised public anger into the 'Aragalaya' protests that forced the family from power."
-      ],
-      "documentedFacts": [
-        "At their peak, family members controlled ministries accounting for a very large portion of state spending.",
-        "Mass protests in 2022 led to the resignation of PM Mahinda Rajapaksa and the flight and resignation of President Gotabaya Rajapaksa.",
-        "Numerous corruption investigations were opened, paused, and reopened depending on who held power."
-      ],
-      "stillContested": "How much of the country's debt crisis is attributable to family-linked projects and corruption versus global shocks, and whether any prosecution will succeed.",
-      "sources": [
         {
-          "label": "Wikipedia: Rajapaksa family",
-          "url": "https://en.wikipedia.org/wiki/Rajapaksa_family"
+          "text": "Critics allege the family concentrated state power, controlled a large share of the national budget through their ministries, and presided over opaque, debt-financed megaprojects.",
+          "perspective": "critics",
+          "sourceIds": [
+            "rj-fam",
+            "rj-mr"
+          ]
         },
         {
+          "text": "Allegations of corruption, nepotism, and suppression of dissent recurred across investigations and media reports.",
+          "perspective": "critics",
+          "sourceIds": [
+            "rj-fam"
+          ]
+        },
+        {
+          "text": "The 2022 economic collapse crystallised public anger into the 'Aragalaya' protests that forced the family from power.",
+          "perspective": "neutral",
+          "sourceIds": [
+            "rj-22",
+            "rj-gr"
+          ]
+        }
+      ],
+      "documentedFacts": [
+        {
+          "text": "At their peak, family members controlled ministries accounting for a very large portion of state spending.",
+          "evidence": "investigative-journalism",
+          "sourceIds": [
+            "rj-fam"
+          ]
+        },
+        {
+          "text": "Mass protests in 2022 led to the resignation of PM Mahinda Rajapaksa and the flight and resignation of President Gotabaya Rajapaksa.",
+          "evidence": "official-record",
+          "sourceIds": [
+            "rj-22",
+            "rj-gr"
+          ]
+        },
+        {
+          "text": "Numerous corruption investigations were opened, paused, and reopened depending on who held power.",
+          "evidence": "encyclopedia",
+          "sourceIds": [
+            "rj-fam",
+            "rj-mr"
+          ]
+        }
+      ],
+      "stillContested": "How much of the country's debt crisis is attributable to family-linked projects and corruption versus global shocks, and whether any prosecution will succeed.",
+      "actors": [
+        "Mahinda Rajapaksa",
+        "Gotabaya Rajapaksa",
+        "Basil Rajapaksa",
+        "Rajapaksa family",
+        "Sri Lanka Podujana Peramuna"
+      ],
+      "relatedTopics": [
+        {
+          "id": "war-final-phase-2009",
+          "relation": "same-actors",
+          "note": "presided over the military victory"
+        },
+        {
+          "id": "economic-crisis-2022",
+          "relation": "led-to",
+          "note": "policies blamed for the 2022 collapse"
+        },
+        {
+          "id": "hambantota-china-debt",
+          "relation": "same-actors",
+          "note": "the port was built in their home district"
+        },
+        {
+          "id": "constitutional-crisis-2018",
+          "relation": "same-actors",
+          "note": "Mahinda was the contested appointee"
+        }
+      ],
+      "sources": [
+        {
+          "id": "rj-fam",
+          "label": "Wikipedia: Rajapaksa family",
+          "url": "https://en.wikipedia.org/wiki/Rajapaksa_family",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "rj-22",
           "label": "Wikipedia: 2022 Sri Lankan protests (Aragalaya)",
-          "url": "https://en.wikipedia.org/wiki/2022_Sri_Lankan_protests"
+          "url": "https://en.wikipedia.org/wiki/2022_Sri_Lankan_protests",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "rj-mr",
+          "label": "Wikipedia: Mahinda Rajapaksa",
+          "url": "https://en.wikipedia.org/wiki/Mahinda_Rajapaksa",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "state"
+        },
+        {
+          "id": "rj-gr",
+          "label": "Wikipedia: Gotabaya Rajapaksa",
+          "url": "https://en.wikipedia.org/wiki/Gotabaya_Rajapaksa",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "state"
         }
       ],
       "evidence": {
-        "score": 25,
-        "grade": "F",
+        "score": 87,
+        "grade": "A",
         "components": {
-          "authority": 13.5,
-          "diversity": 3.3,
-          "citationCoverage": 0.0,
-          "corroboration": 0.0,
-          "balance": 8.0
+          "authority": 21.9,
+          "diversity": 20.0,
+          "citationCoverage": 25.0,
+          "corroboration": 10.0,
+          "balance": 10.0
         },
         "maxComponents": {
           "authority": 30,
@@ -602,35 +964,117 @@
       "summary": "Sri Lanka defaulted on its foreign debt for the first time in its history amid shortages of fuel, food, medicine and electricity. A mass protest movement (the 'Aragalaya', or 'struggle') occupied central Colombo and toppled the president.",
       "mainstreamAccount": "Officials blamed external shocks: the COVID-19 collapse of tourism, the Ukraine war's effect on commodity prices, and global conditions.",
       "competingNarratives": [
-        "Economists point to self-inflicted causes: deep 2019 tax cuts that gutted revenue, money printing, a stubborn defence of an overvalued rupee, and a sudden, ruinous ban on chemical fertiliser.",
-        "Years of borrowing for low-return projects left the country exposed when markets tightened.",
-        "Critics argue elite mismanagement and corruption, not just bad luck, drove the collapse."
-      ],
-      "documentedFacts": [
-        "Sri Lanka announced a sovereign default in April 2022.",
-        "An IMF Extended Fund Facility was agreed in 2023 with austerity conditions.",
-        "President Gotabaya Rajapaksa fled the country and resigned in July 2022 after protesters stormed the presidential residence."
-      ],
-      "stillContested": "The balance of blame between external shocks and domestic policy, who profited from the debt build-up, and whether IMF-mandated austerity falls hardest on ordinary citizens.",
-      "sources": [
         {
-          "label": "Wikipedia: Sri Lankan economic crisis (2019–present)",
-          "url": "https://en.wikipedia.org/wiki/Sri_Lankan_economic_crisis_(2019%E2%80%93present)"
+          "text": "Economists point to self-inflicted causes: deep 2019 tax cuts that gutted revenue, money printing, a stubborn defence of an overvalued rupee, and a sudden, ruinous ban on chemical fertiliser.",
+          "perspective": "economists",
+          "sourceIds": [
+            "ec-wp",
+            "ec-gr"
+          ]
         },
         {
+          "text": "Years of borrowing for low-return projects left the country exposed when markets tightened.",
+          "perspective": "critics",
+          "sourceIds": [
+            "ec-wp"
+          ]
+        },
+        {
+          "text": "Critics argue elite mismanagement and corruption, not just bad luck, drove the collapse.",
+          "perspective": "critics",
+          "sourceIds": [
+            "ec-wp",
+            "ec-22"
+          ]
+        }
+      ],
+      "documentedFacts": [
+        {
+          "text": "Sri Lanka announced a sovereign default in April 2022.",
+          "evidence": "official-record",
+          "sourceIds": [
+            "ec-wp"
+          ]
+        },
+        {
+          "text": "An IMF Extended Fund Facility was agreed in 2023 with austerity conditions.",
+          "evidence": "official-record",
+          "sourceIds": [
+            "ec-wp"
+          ]
+        },
+        {
+          "text": "President Gotabaya Rajapaksa fled the country and resigned in July 2022 after protesters stormed the presidential residence.",
+          "evidence": "official-record",
+          "sourceIds": [
+            "ec-22",
+            "ec-gr"
+          ]
+        }
+      ],
+      "stillContested": "The balance of blame between external shocks and domestic policy, who profited from the debt build-up, and whether IMF-mandated austerity falls hardest on ordinary citizens.",
+      "actors": [
+        "Gotabaya Rajapaksa",
+        "Basil Rajapaksa",
+        "International Monetary Fund",
+        "Central Bank of Sri Lanka",
+        "Aragalaya protesters"
+      ],
+      "relatedTopics": [
+        {
+          "id": "rajapaksa-dynasty",
+          "relation": "caused-by",
+          "note": "family-linked policy and projects drove the debt"
+        },
+        {
+          "id": "hambantota-china-debt",
+          "relation": "context-for",
+          "note": "emblem of the debt-financed project era"
+        },
+        {
+          "id": "central-bank-bond-scam-2015",
+          "relation": "context-for",
+          "note": "earlier blow to monetary credibility"
+        }
+      ],
+      "sources": [
+        {
+          "id": "ec-wp",
+          "label": "Wikipedia: Sri Lankan economic crisis (2019–present)",
+          "url": "https://en.wikipedia.org/wiki/Sri_Lankan_economic_crisis_(2019%E2%80%93present)",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "ec-22",
           "label": "Wikipedia: 2022 Sri Lankan protests",
-          "url": "https://en.wikipedia.org/wiki/2022_Sri_Lankan_protests"
+          "url": "https://en.wikipedia.org/wiki/2022_Sri_Lankan_protests",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "ec-gr",
+          "label": "Wikipedia: Gotabaya Rajapaksa",
+          "url": "https://en.wikipedia.org/wiki/Gotabaya_Rajapaksa",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "state"
         }
       ],
       "evidence": {
-        "score": 25,
-        "grade": "F",
+        "score": 80,
+        "grade": "A",
         "components": {
-          "authority": 13.5,
-          "diversity": 3.3,
-          "citationCoverage": 0.0,
-          "corroboration": 0.0,
-          "balance": 8.0
+          "authority": 23.1,
+          "diversity": 16.7,
+          "citationCoverage": 25.0,
+          "corroboration": 5.0,
+          "balance": 10.0
         },
         "maxComponents": {
           "authority": 30,
@@ -650,35 +1094,122 @@
       "summary": "Editor Lasantha Wickrematunge, a prominent government critic, was murdered in 2009. His posthumously published editorial predicted his own killing and named the government as responsible — making his death emblematic of a broader pattern of attacks on the press.",
       "mainstreamAccount": "Officials denied state involvement and investigations stalled for years.",
       "competingNarratives": [
-        "Wickrematunge's own posthumous editorial, 'And Then They Came For Me', directly implicated the government.",
-        "Multiple journalists and media outlets were attacked, abducted, or killed during the war years; many cases were never solved.",
-        "Later investigations alleged military intelligence involvement, but prosecutions repeatedly faltered."
-      ],
-      "documentedFacts": [
-        "Press-freedom organisations ranked Sri Lanka among the most dangerous countries for journalists during this period.",
-        "The cartoonist and journalist Prageeth Eknaligoda disappeared in 2010 and remains missing.",
-        "Investigations into these cases advanced and reversed depending on the government in power."
-      ],
-      "stillContested": "Who ordered the killings and abductions, why investigations collapse when certain figures return to power, and whether justice is now politically impossible.",
-      "sources": [
         {
-          "label": "Wikipedia: Lasantha Wickrematunge",
-          "url": "https://en.wikipedia.org/wiki/Lasantha_Wickrematunge"
+          "text": "Wickrematunge's own posthumous editorial, 'And Then They Came For Me', directly implicated the government.",
+          "perspective": "critics",
+          "sourceIds": [
+            "la-lw",
+            "la-sl"
+          ]
         },
         {
+          "text": "Multiple journalists and media outlets were attacked, abducted, or killed during the war years; many cases were never solved.",
+          "perspective": "international",
+          "sourceIds": [
+            "la-lw",
+            "la-pe"
+          ]
+        },
+        {
+          "text": "Later investigations alleged military intelligence involvement, but prosecutions repeatedly faltered.",
+          "perspective": "critics",
+          "sourceIds": [
+            "la-lw"
+          ]
+        }
+      ],
+      "documentedFacts": [
+        {
+          "text": "Press-freedom organisations ranked Sri Lanka among the most dangerous countries for journalists during this period.",
+          "evidence": "ngo",
+          "sourceIds": [
+            "la-lw"
+          ]
+        },
+        {
+          "text": "The cartoonist and journalist Prageeth Eknaligoda disappeared in 2010 and remains missing.",
+          "evidence": "testimony",
+          "sourceIds": [
+            "la-pe"
+          ]
+        },
+        {
+          "text": "Investigations into these cases advanced and reversed depending on the government in power.",
+          "evidence": "encyclopedia",
+          "sourceIds": [
+            "la-lw",
+            "la-pe"
+          ]
+        }
+      ],
+      "stillContested": "Who ordered the killings and abductions, why investigations collapse when certain figures return to power, and whether justice is now politically impossible.",
+      "actors": [
+        "Lasantha Wickrematunge",
+        "Prageeth Eknaligoda",
+        "The Sunday Leader",
+        "Sri Lankan military intelligence",
+        "Mahinda Rajapaksa"
+      ],
+      "relatedTopics": [
+        {
+          "id": "war-final-phase-2009",
+          "relation": "same-era",
+          "note": "killed during the final war years"
+        },
+        {
+          "id": "enforced-disappearances",
+          "relation": "part-of",
+          "note": "part of the wider pattern of abductions"
+        },
+        {
+          "id": "rajapaksa-dynasty",
+          "relation": "same-actors",
+          "note": "occurred under Rajapaksa rule"
+        },
+        {
+          "id": "pta-detention",
+          "relation": "context-for",
+          "note": "security climate that chilled the press"
+        }
+      ],
+      "sources": [
+        {
+          "id": "la-lw",
+          "label": "Wikipedia: Lasantha Wickrematunge",
+          "url": "https://en.wikipedia.org/wiki/Lasantha_Wickrematunge",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "la-pe",
           "label": "Wikipedia: Prageeth Eknaligoda",
-          "url": "https://en.wikipedia.org/wiki/Prageeth_Eknaligoda"
+          "url": "https://en.wikipedia.org/wiki/Prageeth_Eknaligoda",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "la-sl",
+          "label": "Wikipedia: The Sunday Leader",
+          "url": "https://en.wikipedia.org/wiki/The_Sunday_Leader",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
         }
       ],
       "evidence": {
-        "score": 25,
-        "grade": "F",
+        "score": 79,
+        "grade": "B",
         "components": {
-          "authority": 13.5,
-          "diversity": 3.3,
-          "citationCoverage": 0.0,
-          "corroboration": 0.0,
-          "balance": 8.0
+          "authority": 18.6,
+          "diversity": 20.0,
+          "citationCoverage": 25.0,
+          "corroboration": 5.0,
+          "balance": 10.0
         },
         "maxComponents": {
           "authority": 30,
@@ -698,35 +1229,120 @@
       "summary": "Across the JVP insurrections and the civil war, Sri Lanka accumulated one of the world's highest totals of enforced disappearances. Families — especially Tamil mothers of the missing — have held some of the longest continuous protests in the country's history.",
       "mainstreamAccount": "Successive governments established commissions and an Office on Missing Persons, framing the issue as being addressed.",
       "competingNarratives": [
-        "Victims' families say commissions have produced testimony but almost no truth, accountability, or return of the missing.",
-        "Many of those who 'surrendered' to the army at the war's end were never seen again.",
-        "Activists allege a deliberate strategy of denial and delay to outlast the families' campaigns."
-      ],
-      "documentedFacts": [
-        "The UN Working Group on Enforced or Involuntary Disappearances has logged tens of thousands of Sri Lankan cases over decades.",
-        "An Office on Missing Persons (OMP) was established by law in 2016.",
-        "Continuous roadside protests by families of the disappeared have run for years in the north and east."
-      ],
-      "stillContested": "What happened to those who surrendered at the war's end, the true number of the missing, and whether the OMP can deliver answers or functions mainly to manage international pressure.",
-      "sources": [
         {
-          "label": "Wikipedia: Enforced disappearances in Sri Lanka",
-          "url": "https://en.wikipedia.org/wiki/Enforced_disappearance"
+          "text": "Victims' families say commissions have produced testimony but almost no truth, accountability, or return of the missing.",
+          "perspective": "tamil",
+          "sourceIds": [
+            "ed-ohchr",
+            "ed-hr"
+          ]
         },
         {
+          "text": "Many of those who 'surrendered' to the army at the war's end were never seen again.",
+          "perspective": "tamil",
+          "sourceIds": [
+            "ed-hr"
+          ]
+        },
+        {
+          "text": "Activists allege a deliberate strategy of denial and delay to outlast the families' campaigns.",
+          "perspective": "critics",
+          "sourceIds": [
+            "ed-ohchr"
+          ]
+        }
+      ],
+      "documentedFacts": [
+        {
+          "text": "The UN Working Group on Enforced or Involuntary Disappearances has logged tens of thousands of Sri Lankan cases over decades.",
+          "evidence": "un-official",
+          "sourceIds": [
+            "ed-ohchr"
+          ]
+        },
+        {
+          "text": "An Office on Missing Persons (OMP) was established by law in 2016.",
+          "evidence": "official-record",
+          "sourceIds": [
+            "ed-hr"
+          ]
+        },
+        {
+          "text": "Continuous roadside protests by families of the disappeared have run for years in the north and east.",
+          "evidence": "testimony",
+          "sourceIds": [
+            "ed-hr",
+            "ed-wp"
+          ]
+        }
+      ],
+      "stillContested": "What happened to those who surrendered at the war's end, the true number of the missing, and whether the OMP can deliver answers or functions mainly to manage international pressure.",
+      "actors": [
+        "Families of the disappeared",
+        "UN Working Group on Enforced Disappearances",
+        "Office on Missing Persons",
+        "Sri Lankan military"
+      ],
+      "relatedTopics": [
+        {
+          "id": "war-final-phase-2009",
+          "relation": "caused-by",
+          "note": "many vanished at the war's end"
+        },
+        {
+          "id": "jvp-insurrections",
+          "relation": "caused-by",
+          "note": "the 1987–89 terror produced tens of thousands of cases"
+        },
+        {
+          "id": "lasantha-journalists",
+          "relation": "same-era",
+          "note": "overlapping pattern of abduction"
+        },
+        {
+          "id": "pta-detention",
+          "relation": "context-for",
+          "note": "detention law enabled disappearances"
+        }
+      ],
+      "sources": [
+        {
+          "id": "ed-wp",
+          "label": "Wikipedia: Enforced disappearance",
+          "url": "https://en.wikipedia.org/wiki/Enforced_disappearance",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "ed-ohchr",
           "label": "OHCHR: Sri Lanka",
-          "url": "https://www.ohchr.org/en/countries/sri-lanka"
+          "url": "https://www.ohchr.org/en/countries/sri-lanka",
+          "type": "un-official",
+          "publisher": "UN OHCHR",
+          "date": "",
+          "perspective": "international"
+        },
+        {
+          "id": "ed-hr",
+          "label": "Wikipedia: Human rights in Sri Lanka",
+          "url": "https://en.wikipedia.org/wiki/Human_rights_in_Sri_Lanka",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "international"
         }
       ],
       "evidence": {
-        "score": 39,
-        "grade": "D",
+        "score": 84,
+        "grade": "A",
         "components": {
           "authority": 24.3,
-          "diversity": 6.7,
-          "citationCoverage": 0.0,
-          "corroboration": 0.0,
-          "balance": 8.0
+          "diversity": 20.0,
+          "citationCoverage": 25.0,
+          "corroboration": 5.0,
+          "balance": 10.0
         },
         "maxComponents": {
           "authority": 30,
@@ -746,35 +1362,118 @@
       "summary": "The 1987 Indo-Lanka Accord, signed under Indian pressure, introduced provincial councils and a degree of devolution via the 13th Amendment. Decades on, it remains a flashpoint: too much for Sinhala nationalists, too little for Tamil federalists, and never fully implemented.",
       "mainstreamAccount": "Presented as a peace settlement that would devolve power to provinces and reduce ethnic grievance.",
       "competingNarratives": [
-        "Sinhala nationalists view it as an imposition by India that threatens the unitary state and should be repealed.",
-        "Tamil parties argue police and land powers promised under it were never devolved, making it hollow.",
-        "The accord and the accompanying Indian Peace Keeping Force (IPKF) deployment were deeply unpopular and bloody."
-      ],
-      "documentedFacts": [
-        "The 13th Amendment created provincial councils that still exist (though elections to them have been delayed for years).",
-        "The IPKF ended up fighting the LTTE it was meant to disarm, suffering heavy casualties before withdrawing in 1990.",
-        "Full implementation — especially police and land powers — remains contested in every election cycle."
-      ],
-      "stillContested": "Whether devolution is the solution or a threat, why provincial council elections keep being postponed, and the role of Indian strategic interest in the arrangement.",
-      "sources": [
         {
-          "label": "Wikipedia: Thirteenth Amendment to the Constitution of Sri Lanka",
-          "url": "https://en.wikipedia.org/wiki/Thirteenth_Amendment_to_the_Constitution_of_Sri_Lanka"
+          "text": "Sinhala nationalists view it as an imposition by India that threatens the unitary state and should be repealed.",
+          "perspective": "sinhala-nationalist",
+          "sourceIds": [
+            "ta-13",
+            "ta-ac"
+          ]
         },
         {
+          "text": "Tamil parties argue police and land powers promised under it were never devolved, making it hollow.",
+          "perspective": "tamil",
+          "sourceIds": [
+            "ta-13"
+          ]
+        },
+        {
+          "text": "The accord and the accompanying Indian Peace Keeping Force (IPKF) deployment were deeply unpopular and bloody.",
+          "perspective": "neutral",
+          "sourceIds": [
+            "ta-ac",
+            "ta-ipkf"
+          ]
+        }
+      ],
+      "documentedFacts": [
+        {
+          "text": "The 13th Amendment created provincial councils that still exist (though elections to them have been delayed for years).",
+          "evidence": "official-record",
+          "sourceIds": [
+            "ta-13"
+          ]
+        },
+        {
+          "text": "The IPKF ended up fighting the LTTE it was meant to disarm, suffering heavy casualties before withdrawing in 1990.",
+          "evidence": "encyclopedia",
+          "sourceIds": [
+            "ta-ipkf",
+            "ta-ac"
+          ]
+        },
+        {
+          "text": "Full implementation — especially police and land powers — remains contested in every election cycle.",
+          "evidence": "encyclopedia",
+          "sourceIds": [
+            "ta-13"
+          ]
+        }
+      ],
+      "stillContested": "Whether devolution is the solution or a threat, why provincial council elections keep being postponed, and the role of Indian strategic interest in the arrangement.",
+      "actors": [
+        "Government of India",
+        "Rajiv Gandhi",
+        "J. R. Jayewardene",
+        "Indian Peace Keeping Force",
+        "LTTE",
+        "Tamil National Alliance"
+      ],
+      "relatedTopics": [
+        {
+          "id": "black-july-1983",
+          "relation": "caused-by",
+          "note": "the pogrom precipitated Indian intervention"
+        },
+        {
+          "id": "executive-presidency",
+          "relation": "part-of",
+          "note": "a recurring constitutional-reform fault line"
+        },
+        {
+          "id": "jvp-insurrections",
+          "relation": "same-era",
+          "note": "the JVP rose partly in opposition to the accord"
+        }
+      ],
+      "sources": [
+        {
+          "id": "ta-13",
+          "label": "Wikipedia: Thirteenth Amendment to the Constitution",
+          "url": "https://en.wikipedia.org/wiki/Thirteenth_Amendment_to_the_Constitution_of_Sri_Lanka",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "ta-ac",
           "label": "Wikipedia: Indo-Sri Lanka Accord",
-          "url": "https://en.wikipedia.org/wiki/Indo-Sri_Lanka_Accord"
+          "url": "https://en.wikipedia.org/wiki/Indo-Sri_Lanka_Accord",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "ta-ipkf",
+          "label": "Wikipedia: Indian Peace Keeping Force",
+          "url": "https://en.wikipedia.org/wiki/Indian_Peace_Keeping_Force",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
         }
       ],
       "evidence": {
-        "score": 25,
-        "grade": "F",
+        "score": 78,
+        "grade": "B",
         "components": {
-          "authority": 13.5,
-          "diversity": 3.3,
-          "citationCoverage": 0.0,
-          "corroboration": 0.0,
-          "balance": 8.0
+          "authority": 21.5,
+          "diversity": 16.7,
+          "citationCoverage": 25.0,
+          "corroboration": 5.0,
+          "balance": 10.0
         },
         "maxComponents": {
           "authority": 30,
@@ -794,31 +1493,120 @@
       "summary": "President Maithripala Sirisena abruptly sacked Prime Minister Ranil Wickremesinghe and appointed Mahinda Rajapaksa, then dissolved parliament — triggering a 51-day crisis with two men claiming the premiership until the courts intervened.",
       "mainstreamAccount": "Sirisena framed the move as within his presidential powers and necessary for stability.",
       "competingNarratives": [
-        "Critics called it an unconstitutional power grab that violated the 19th Amendment.",
-        "The Supreme Court ultimately ruled the dissolution of parliament unconstitutional.",
-        "The episode exposed how fragile institutional checks were against executive overreach."
+        {
+          "text": "Critics called it an unconstitutional power grab that violated the 19th Amendment.",
+          "perspective": "critics",
+          "sourceIds": [
+            "cc-wp",
+            "cc-rw"
+          ]
+        },
+        {
+          "text": "The Supreme Court ultimately ruled the dissolution of parliament unconstitutional.",
+          "perspective": "official",
+          "sourceIds": [
+            "cc-wp"
+          ]
+        },
+        {
+          "text": "The episode exposed how fragile institutional checks were against executive overreach.",
+          "perspective": "neutral",
+          "sourceIds": [
+            "cc-wp"
+          ]
+        }
       ],
       "documentedFacts": [
-        "Parliament passed no-confidence motions against the Rajapaksa-led government.",
-        "The Supreme Court reinstated parliament and Wickremesinghe was restored as PM.",
-        "The crisis is widely seen as a constitutional stress test the institutions barely passed."
+        {
+          "text": "Parliament passed no-confidence motions against the Rajapaksa-led government.",
+          "evidence": "official-record",
+          "sourceIds": [
+            "cc-wp"
+          ]
+        },
+        {
+          "text": "The Supreme Court reinstated parliament and Wickremesinghe was restored as PM.",
+          "evidence": "court-ruling",
+          "sourceIds": [
+            "cc-wp",
+            "cc-rw"
+          ]
+        },
+        {
+          "text": "The crisis is widely seen as a constitutional stress test the institutions barely passed.",
+          "evidence": "academic",
+          "sourceIds": [
+            "cc-wp"
+          ]
+        }
       ],
       "stillContested": "How close the country came to a lasting breakdown, the motives behind Sirisena's gamble, and whether the precedent weakened constitutional norms.",
+      "actors": [
+        "Maithripala Sirisena",
+        "Ranil Wickremesinghe",
+        "Mahinda Rajapaksa",
+        "Supreme Court of Sri Lanka"
+      ],
+      "relatedTopics": [
+        {
+          "id": "executive-presidency",
+          "relation": "part-of",
+          "note": "a stress test of presidential power"
+        },
+        {
+          "id": "easter-bombings-2019",
+          "relation": "led-to",
+          "note": "the feud crippled intelligence-sharing"
+        },
+        {
+          "id": "central-bank-bond-scam-2015",
+          "relation": "same-actors",
+          "note": "same governing coalition"
+        },
+        {
+          "id": "rajapaksa-dynasty",
+          "relation": "same-actors",
+          "note": "Mahinda was the contested appointee"
+        }
+      ],
       "sources": [
         {
+          "id": "cc-wp",
           "label": "Wikipedia: 2018 Sri Lankan constitutional crisis",
-          "url": "https://en.wikipedia.org/wiki/2018_Sri_Lankan_constitutional_crisis"
+          "url": "https://en.wikipedia.org/wiki/2018_Sri_Lankan_constitutional_crisis",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "cc-ms",
+          "label": "Wikipedia: Maithripala Sirisena",
+          "url": "https://en.wikipedia.org/wiki/Maithripala_Sirisena",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "state"
+        },
+        {
+          "id": "cc-rw",
+          "label": "Wikipedia: Ranil Wickremesinghe",
+          "url": "https://en.wikipedia.org/wiki/Ranil_Wickremesinghe",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "state"
         }
       ],
       "evidence": {
-        "score": 25,
-        "grade": "F",
+        "score": 86,
+        "grade": "A",
         "components": {
-          "authority": 13.5,
-          "diversity": 3.3,
-          "citationCoverage": 0.0,
-          "corroboration": 0.0,
-          "balance": 8.0
+          "authority": 26.0,
+          "diversity": 20.0,
+          "citationCoverage": 25.0,
+          "corroboration": 5.0,
+          "balance": 10.0
         },
         "maxComponents": {
           "authority": 30,
@@ -838,35 +1626,117 @@
       "summary": "The Chinese-financed Hambantota port, built in the home district of the Rajapaksas, became unprofitable and was leased to a Chinese state company for 99 years. It is the world's most-cited example in the 'Chinese debt-trap diplomacy' debate — a framing that is itself contested.",
       "mainstreamAccount": "Often presented internationally as proof that China deliberately ensnares nations in debt to seize strategic assets.",
       "competingNarratives": [
-        "Several researchers argue the 'debt trap' label is misleading: most Sri Lankan debt was owed to financial markets and Western-aligned lenders, not China, and the lease raised cash to pay other creditors.",
-        "Others maintain the project was a politically motivated vanity build with little commercial logic, financed on poor terms.",
-        "Indian and Western strategic anxiety over a Chinese foothold near key sea lanes colours much of the coverage."
-      ],
-      "documentedFacts": [
-        "The port was leased to China Merchants Port Holdings in 2017 for about US$1.1 billion and a 99-year term.",
-        "At default in 2022, the largest shares of Sri Lanka's external debt were market borrowings (sovereign bonds) and multilateral lenders, with China one of several bilateral creditors.",
-        "The port has had military and strategic significance in regional rivalry."
-      ],
-      "stillContested": "Whether 'debt-trap diplomacy' is an accurate description or a geopolitical narrative, who really drove the country into unsustainable debt, and the strategic implications of the lease.",
-      "sources": [
         {
-          "label": "Wikipedia: Hambantota International Port",
-          "url": "https://en.wikipedia.org/wiki/Hambantota_International_Port"
+          "text": "Several researchers argue the 'debt trap' label is misleading: most Sri Lankan debt was owed to financial markets and Western-aligned lenders, not China, and the lease raised cash to pay other creditors.",
+          "perspective": "academic",
+          "sourceIds": [
+            "hb-debt",
+            "hb-port"
+          ]
         },
         {
+          "text": "Others maintain the project was a politically motivated vanity build with little commercial logic, financed on poor terms.",
+          "perspective": "critics",
+          "sourceIds": [
+            "hb-port"
+          ]
+        },
+        {
+          "text": "Indian and Western strategic anxiety over a Chinese foothold near key sea lanes colours much of the coverage.",
+          "perspective": "contested",
+          "sourceIds": [
+            "hb-debt",
+            "hb-bri"
+          ]
+        }
+      ],
+      "documentedFacts": [
+        {
+          "text": "The port was leased to China Merchants Port Holdings in 2017 for about US$1.1 billion and a 99-year term.",
+          "evidence": "official-record",
+          "sourceIds": [
+            "hb-port"
+          ]
+        },
+        {
+          "text": "At default in 2022, the largest shares of Sri Lanka's external debt were market borrowings (sovereign bonds) and multilateral lenders, with China one of several bilateral creditors.",
+          "evidence": "academic",
+          "sourceIds": [
+            "hb-debt",
+            "hb-port"
+          ]
+        },
+        {
+          "text": "The port has had military and strategic significance in regional rivalry.",
+          "evidence": "encyclopedia",
+          "sourceIds": [
+            "hb-bri",
+            "hb-port"
+          ]
+        }
+      ],
+      "stillContested": "Whether 'debt-trap diplomacy' is an accurate description or a geopolitical narrative, who really drove the country into unsustainable debt, and the strategic implications of the lease.",
+      "actors": [
+        "China Merchants Port Holdings",
+        "Government of China",
+        "Mahinda Rajapaksa",
+        "Government of India"
+      ],
+      "relatedTopics": [
+        {
+          "id": "economic-crisis-2022",
+          "relation": "led-to",
+          "note": "cited in the debt-sustainability debate"
+        },
+        {
+          "id": "rajapaksa-dynasty",
+          "relation": "same-actors",
+          "note": "a flagship Rajapaksa project"
+        },
+        {
+          "id": "13th-amendment-indo-lanka",
+          "relation": "context-for",
+          "note": "Indian strategic anxiety links both"
+        }
+      ],
+      "sources": [
+        {
+          "id": "hb-port",
+          "label": "Wikipedia: Hambantota International Port",
+          "url": "https://en.wikipedia.org/wiki/Hambantota_International_Port",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "hb-debt",
           "label": "Wikipedia: Debt-trap diplomacy",
-          "url": "https://en.wikipedia.org/wiki/Debt-trap_diplomacy"
+          "url": "https://en.wikipedia.org/wiki/Debt-trap_diplomacy",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "hb-bri",
+          "label": "Wikipedia: Belt and Road Initiative",
+          "url": "https://en.wikipedia.org/wiki/Belt_and_Road_Initiative",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
         }
       ],
       "evidence": {
-        "score": 25,
-        "grade": "F",
+        "score": 87,
+        "grade": "A",
         "components": {
-          "authority": 13.5,
-          "diversity": 3.3,
-          "citationCoverage": 0.0,
-          "corroboration": 0.0,
-          "balance": 8.0
+          "authority": 22.2,
+          "diversity": 20.0,
+          "citationCoverage": 25.0,
+          "corroboration": 10.0,
+          "balance": 10.0
         },
         "maxComponents": {
           "authority": 30,
@@ -886,35 +1756,122 @@
       "summary": "Enacted in 1979 as a 'temporary' measure, the PTA allows prolonged detention without charge and has been used for decades against Tamils, Muslims, dissidents, and critics. Repeated promises to repeal or reform it have not materialised.",
       "mainstreamAccount": "Defended by governments as essential counter-terrorism legislation.",
       "competingNarratives": [
-        "Rights groups document its use to detain people for years without trial, to extract confessions under duress, and to silence dissent.",
-        "Its application broadened after the 2019 Easter attacks to target the Muslim community.",
-        "The EU has tied trade preferences (GSP+) to PTA reform, with limited results."
-      ],
-      "documentedFacts": [
-        "The PTA permits extended administrative detention and admits confessions made to police.",
-        "Numerous detainees have been held for many years without trial under its provisions.",
-        "Successive governments pledged repeal or replacement; the law remains in force."
-      ],
-      "stillContested": "Why a 'temporary' 1979 law endures, how many remain detained under it, and whether reform is genuine or cosmetic to satisfy trade partners.",
-      "sources": [
         {
-          "label": "Wikipedia: Prevention of Terrorism Act (Sri Lanka)",
-          "url": "https://en.wikipedia.org/wiki/Prevention_of_Terrorism_Act_(Sri_Lanka)"
+          "text": "Rights groups document its use to detain people for years without trial, to extract confessions under duress, and to silence dissent.",
+          "perspective": "international",
+          "sourceIds": [
+            "pta-ai",
+            "pta-hr"
+          ]
         },
         {
+          "text": "Its application broadened after the 2019 Easter attacks to target the Muslim community.",
+          "perspective": "critics",
+          "sourceIds": [
+            "pta-wp",
+            "pta-hr"
+          ]
+        },
+        {
+          "text": "The EU has tied trade preferences (GSP+) to PTA reform, with limited results.",
+          "perspective": "international",
+          "sourceIds": [
+            "pta-ai"
+          ]
+        }
+      ],
+      "documentedFacts": [
+        {
+          "text": "The PTA permits extended administrative detention and admits confessions made to police.",
+          "evidence": "primary-doc",
+          "sourceIds": [
+            "pta-wp"
+          ]
+        },
+        {
+          "text": "Numerous detainees have been held for many years without trial under its provisions.",
+          "evidence": "ngo",
+          "sourceIds": [
+            "pta-ai"
+          ]
+        },
+        {
+          "text": "Successive governments pledged repeal or replacement; the law remains in force.",
+          "evidence": "official-record",
+          "sourceIds": [
+            "pta-wp",
+            "pta-hr"
+          ]
+        }
+      ],
+      "stillContested": "Why a 'temporary' 1979 law endures, how many remain detained under it, and whether reform is genuine or cosmetic to satisfy trade partners.",
+      "actors": [
+        "Government of Sri Lanka",
+        "Sri Lankan police",
+        "European Union",
+        "Muslim community",
+        "Amnesty International"
+      ],
+      "relatedTopics": [
+        {
+          "id": "war-final-phase-2009",
+          "relation": "context-for",
+          "note": "the law underpinned wartime detention"
+        },
+        {
+          "id": "easter-bombings-2019",
+          "relation": "led-to",
+          "note": "use widened against Muslims after the attacks"
+        },
+        {
+          "id": "enforced-disappearances",
+          "relation": "context-for",
+          "note": "detention without trial enabled disappearances"
+        },
+        {
+          "id": "jvp-insurrections",
+          "relation": "context-for",
+          "note": "deployed against earlier insurgents"
+        }
+      ],
+      "sources": [
+        {
+          "id": "pta-wp",
+          "label": "Wikipedia: Prevention of Terrorism Act (Sri Lanka)",
+          "url": "https://en.wikipedia.org/wiki/Prevention_of_Terrorism_Act_(Sri_Lanka)",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "pta-ai",
           "label": "Amnesty International: Sri Lanka",
-          "url": "https://www.amnesty.org/en/location/asia-and-the-pacific/south-asia/sri-lanka/"
+          "url": "https://www.amnesty.org/en/location/asia-and-the-pacific/south-asia/sri-lanka/",
+          "type": "ngo",
+          "publisher": "Amnesty International",
+          "date": "",
+          "perspective": "international"
+        },
+        {
+          "id": "pta-hr",
+          "label": "Wikipedia: Human rights in Sri Lanka",
+          "url": "https://en.wikipedia.org/wiki/Human_rights_in_Sri_Lanka",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "international"
         }
       ],
       "evidence": {
-        "score": 34,
-        "grade": "F",
+        "score": 85,
+        "grade": "A",
         "components": {
-          "authority": 19.5,
-          "diversity": 6.7,
-          "citationCoverage": 0.0,
-          "corroboration": 0.0,
-          "balance": 8.0
+          "authority": 25.3,
+          "diversity": 20.0,
+          "citationCoverage": 25.0,
+          "corroboration": 5.0,
+          "balance": 10.0
         },
         "maxComponents": {
           "authority": 30,
@@ -934,35 +1891,116 @@
       "summary": "The 1978 constitution created a powerful executive presidency. Nearly every president since has campaigned on abolishing or curbing it — then kept or expanded its powers. The amendments to the constitution have swung between curbing (19th) and restoring (20th) presidential power.",
       "mainstreamAccount": "Defenders argue a strong executive provides stability and decisiveness for a divided country.",
       "competingNarratives": [
-        "Critics say it concentrates power dangerously, undermines parliament and the judiciary, and enables authoritarian drift.",
-        "The repeated pattern — promise abolition, win office, retain power — has bred deep public cynicism.",
-        "The 18th, 19th, 20th and 21st Amendments show power oscillating with whoever holds the presidency."
-      ],
-      "documentedFacts": [
-        "The 19th Amendment (2015) curbed presidential powers and strengthened independent commissions.",
-        "The 20th Amendment (2020) reversed many of those curbs, re-empowering the president.",
-        "Abolition of the executive presidency has been a campaign promise for decades without being delivered."
-      ],
-      "stillContested": "Whether the system can ever be reformed by those it benefits, and how much it is responsible for governance failures and the 2022 collapse.",
-      "sources": [
         {
-          "label": "Wikipedia: Executive President of Sri Lanka",
-          "url": "https://en.wikipedia.org/wiki/President_of_Sri_Lanka"
+          "text": "Critics say it concentrates power dangerously, undermines parliament and the judiciary, and enables authoritarian drift.",
+          "perspective": "critics",
+          "sourceIds": [
+            "ep-pr",
+            "ep-19"
+          ]
         },
         {
-          "label": "Wikipedia: Nineteenth Amendment to the Constitution of Sri Lanka",
-          "url": "https://en.wikipedia.org/wiki/Nineteenth_Amendment_to_the_Constitution_of_Sri_Lanka"
+          "text": "The repeated pattern — promise abolition, win office, retain power — has bred deep public cynicism.",
+          "perspective": "critics",
+          "sourceIds": [
+            "ep-pr"
+          ]
+        },
+        {
+          "text": "The 18th, 19th, 20th and 21st Amendments show power oscillating with whoever holds the presidency.",
+          "perspective": "neutral",
+          "sourceIds": [
+            "ep-19",
+            "ep-20"
+          ]
+        }
+      ],
+      "documentedFacts": [
+        {
+          "text": "The 19th Amendment (2015) curbed presidential powers and strengthened independent commissions.",
+          "evidence": "official-record",
+          "sourceIds": [
+            "ep-19"
+          ]
+        },
+        {
+          "text": "The 20th Amendment (2020) reversed many of those curbs, re-empowering the president.",
+          "evidence": "official-record",
+          "sourceIds": [
+            "ep-20"
+          ]
+        },
+        {
+          "text": "Abolition of the executive presidency has been a campaign promise for decades without being delivered.",
+          "evidence": "encyclopedia",
+          "sourceIds": [
+            "ep-pr"
+          ]
+        }
+      ],
+      "stillContested": "Whether the system can ever be reformed by those it benefits, and how much it is responsible for governance failures and the 2022 collapse.",
+      "actors": [
+        "Executive President of Sri Lanka",
+        "J. R. Jayewardene",
+        "Maithripala Sirisena",
+        "Gotabaya Rajapaksa",
+        "Parliament of Sri Lanka"
+      ],
+      "relatedTopics": [
+        {
+          "id": "constitutional-crisis-2018",
+          "relation": "part-of",
+          "note": "the powers that triggered the crisis"
+        },
+        {
+          "id": "13th-amendment-indo-lanka",
+          "relation": "part-of",
+          "note": "a parallel constitutional fault line"
+        },
+        {
+          "id": "jvp-insurrections",
+          "relation": "context-for",
+          "note": "emergency rule rested on presidential power"
+        }
+      ],
+      "sources": [
+        {
+          "id": "ep-pr",
+          "label": "Wikipedia: Executive President of Sri Lanka",
+          "url": "https://en.wikipedia.org/wiki/President_of_Sri_Lanka",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "ep-19",
+          "label": "Wikipedia: Nineteenth Amendment to the Constitution",
+          "url": "https://en.wikipedia.org/wiki/Nineteenth_Amendment_to_the_Constitution_of_Sri_Lanka",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
+        },
+        {
+          "id": "ep-20",
+          "label": "Wikipedia: Twentieth Amendment to the Constitution",
+          "url": "https://en.wikipedia.org/wiki/Twentieth_Amendment_to_the_Constitution_of_Sri_Lanka",
+          "type": "encyclopedia",
+          "publisher": "Wikipedia",
+          "date": "",
+          "perspective": "neutral"
         }
       ],
       "evidence": {
-        "score": 25,
-        "grade": "F",
+        "score": 71,
+        "grade": "B",
         "components": {
-          "authority": 13.5,
-          "diversity": 3.3,
-          "citationCoverage": 0.0,
+          "authority": 22.3,
+          "diversity": 13.3,
+          "citationCoverage": 25.0,
           "corroboration": 0.0,
-          "balance": 8.0
+          "balance": 10.0
         },
         "maxComponents": {
           "authority": 30,

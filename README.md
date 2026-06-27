@@ -48,8 +48,24 @@ python3 cli.py rescore               # bake evidence scores into the data file
 python3 cli.py linkcheck             # ping every source URL, report broken links
 ```
 
-Add `--json` to `list`, `search`, `show`, `score`, or `linkcheck` for machine-readable
-output you can pipe into other tools.
+Add `--json` to `list`, `search`, `show`, `score`, `related`, or `linkcheck` for
+machine-readable output you can pipe into other tools.
+
+### Exploring how cases connect
+
+Entries link to one another through typed `relatedTopics` edges and shared `actors`:
+
+```bash
+python3 cli.py related war-final-phase-2009   # links out, links in, and shared actors
+python3 cli.py graph --format mermaid          # paste into any Mermaid renderer
+python3 cli.py graph --format dot              # Graphviz: ... | dot -Tsvg > graph.svg
+python3 cli.py graph --format json             # {nodes, edges} for D3/Cytoscape/etc.
+```
+
+In the web UI a **▦ Cards / ◍ Graph / ▤ Timeline** switcher offers the same data three
+ways: the card grid, an interactive force-directed relationship graph (node size = number
+of links, colour = category, hover to highlight neighbours, click to open), and a
+chronological timeline. The active category filter applies to all three.
 
 ### Two independent scores
 
@@ -105,10 +121,9 @@ constitutional crisis, Hambantota and the "debt-trap" debate, the PTA, and the e
 presidency.
 
 Each topic carries a **controversy score (0–10)** for ranking and an **Evidence Strength
-grade (A–F)** for sourcing quality. The two priority entries — the Tamil Eelam War and the
-2019 Easter bombings — are fully enriched with per-claim citations, perspective tags, key
-actors, and typed links to related cases; the remaining topics are queued for the same
-treatment.
+grade (A–F)** for sourcing quality. **All 14 entries** are now enriched with per-claim
+citations, perspective tags, key actors, and typed links to related cases, forming a
+connected graph of 50 relationships.
 
 ---
 

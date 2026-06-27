@@ -14,6 +14,8 @@ Usage:
     python3 cli.py validate                  # sanity-check the data file
     python3 cli.py score [id]                 # Evidence Strength score + breakdown
     python3 cli.py rescore                    # bake evidence scores into the data file
+    python3 cli.py related <id>               # how a case links to others (+ shared actors)
+    python3 cli.py graph --format mermaid     # export the relationship graph (mermaid/dot/json)
     python3 cli.py linkcheck                  # verify every source URL resolves
 
 Add --json to `list`/`search`/`show`/`score`/`linkcheck` for machine-readable output.
@@ -457,6 +459,93 @@ def cmd_score(data, args):
         print(dim("\n" + "  ".join(f"{g}:{dist.get(g, 0)}" for g in "ABCDF")))
 
 
+def _incoming(data, tid):
+    """Topics that link TO tid (relations are stored on the source topic)."""
+    out = []
+    for x in data["topics"]:
+        for r in x.get("relatedTopics", []):
+            if r.get("id") == tid:
+                out.append((x, r.get("relation", "related"), r.get("note", "")))
+    return out
+
+
+def cmd_related(data, args):
+    t = find_topic(data, args.id)
+    if not t:
+        sys.exit(1)
+    by_id = {x["id"]: x for x in data["topics"]}
+    outgoing = [(by_id.get(r["id"]), r.get("relation", "related"), r.get("note", ""))
+                for r in t.get("relatedTopics", []) if r.get("id") in by_id]
+    incoming = _incoming(data, t["id"])
+    my_actors = set(t.get("actors", []))
+    shared = []
+    for x in data["topics"]:
+        if x["id"] == t["id"]:
+            continue
+        common = my_actors & set(x.get("actors", []))
+        if common:
+            shared.append((x, sorted(common)))
+
+    if args.json:
+        print(json.dumps({
+            "id": t["id"],
+            "outgoing": [{"id": x["id"], "relation": rel, "note": note} for x, rel, note in outgoing],
+            "incoming": [{"id": x["id"], "relation": rel, "note": note} for x, rel, note in incoming],
+            "sharedActors": [{"id": x["id"], "actors": a} for x, a in shared],
+        }, indent=2, ensure_ascii=False))
+        return
+
+    print(bold(t["title"]) + "\n")
+    def block(title, rows):
+        print(cyan(bold(title)))
+        if not rows:
+            print(dim("  (none)"))
+        for x, rel, note in rows:
+            note = f" — {note}" if note else ""
+            print(f"  • [{yellow(rel)}] {x['title']}{dim(note)}\n    {dim(x['id'])}")
+        print()
+    block("LINKS OUT (this case → others)", outgoing)
+    block("LINKS IN (others → this case)", [(x, rel, note) for x, rel, note in incoming])
+    print(cyan(bold("SHARED ACTORS")))
+    if not shared:
+        print(dim("  (none)"))
+    for x, actors in sorted(shared, key=lambda s: -len(s[1])):
+        print(f"  • {x['title']}\n    {dim(', '.join(actors))}  ({dim(x['id'])})")
+    print()
+
+
+def cmd_graph(data, args):
+    edges = []
+    for t in data["topics"]:
+        for r in t.get("relatedTopics", []):
+            edges.append((t["id"], r.get("id"), r.get("relation", "related")))
+    by_id = {t["id"]: t for t in data["topics"]}
+
+    if args.format == "json":
+        print(json.dumps({
+            "nodes": [{"id": t["id"], "title": t["title"], "category": t["category"],
+                       "controversyScore": t["controversyScore"],
+                       "evidence": (t.get("evidence") or {}).get("grade")}
+                      for t in data["topics"]],
+            "edges": [{"source": s, "target": d, "relation": rel} for s, d, rel in edges],
+        }, indent=2, ensure_ascii=False))
+    elif args.format == "dot":
+        print("digraph archive {")
+        print('  rankdir=LR; node [shape=box, style=rounded];')
+        for t in data["topics"]:
+            print(f'  "{t["id"]}" [label="{t["title"]}"];')
+        for s, d, rel in edges:
+            print(f'  "{s}" -> "{d}" [label="{rel}"];')
+        print("}")
+    else:  # mermaid
+        print("graph LR")
+        for t in data["topics"]:
+            label = t["title"].replace('"', "'")
+            print(f'  {t["id"].replace("-", "_")}["{label}"]')
+        for s, d, rel in edges:
+            print(f'  {s.replace("-", "_")} -->|{rel}| {d.replace("-", "_")}')
+
+
 def cmd_rescore(data, _args):
     for t in data["topics"]:
         ev = scoring.evidence_score(t)
@@ -504,6 +593,13 @@ def main():
 
     sub.add_parser("rescore", help="recompute Evidence scores and bake them into the data file")
 
+    prel = sub.add_parser("related", help="show how a case links to others")
+    prel.add_argument("id", help="topic id or part of its title")
+    prel.add_argument("--json", action="store_true")
+
+    pgr = sub.add_parser("graph", help="export the relationship graph")
+    pgr.add_argument("--format", choices=["mermaid", "dot", "json"], default="mermaid")
+
     plc = sub.add_parser("linkcheck", help="ping every source URL and report broken links")
     plc.add_argument("--timeout", type=int, default=15, help="per-request timeout in seconds")
     plc.add_argument("--workers", type=int, default=8, help="concurrent requests")
@@ -516,7 +612,7 @@ def main():
         "list": cmd_list, "search": cmd_search, "show": cmd_show,
         "categories": cmd_categories, "random": cmd_random,
         "validate": cmd_validate, "score": cmd_score, "rescore": cmd_rescore,
-        "linkcheck": cmd_linkcheck,
+        "related": cmd_related, "graph": cmd_graph, "linkcheck": cmd_linkcheck,
     }
     if not args.cmd:
         # Default: a friendly overview
